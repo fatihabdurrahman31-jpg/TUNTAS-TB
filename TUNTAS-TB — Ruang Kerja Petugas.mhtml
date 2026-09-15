@@ -1,0 +1,1094 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://tuntas-tb.fatihabdurrahman31.chatgpt.site/
+Subject: =?utf-8?Q?TUNTAS-TB=20=E2=80=94=20Ruang=20Kerja=20Petugas?=
+Date: Tue, 15 Sep 2026 20:47:46 +0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--G0hbB5OyudLoNJ1XkSXMFeacWd76z5wnkhXSCLll7F----"
+
+
+------MultipartBoundary--G0hbB5OyudLoNJ1XkSXMFeacWd76z5wnkhXSCLll7F----
+Content-Type: text/html
+Content-ID: <frame-F2E0EC6BE85C48BEE831333B25A54E7C@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://tuntas-tb.fatihabdurrahman31.chatgpt.site/
+
+<!DOCTYPE html><html lang=3D"id"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8">
+ =20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"description" content=3D"TUNTAS-TB membantu petugas layanan =
+primer mengenali hambatan pengobatan dan memprioritaskan tindak lanjut pasi=
+en.">
+  <meta name=3D"theme-color" content=3D"#1f5d4a">
+  <title>TUNTAS-TB =E2=80=94 Ruang Kerja Petugas</title>
+  <link rel=3D"icon" href=3D"https://tuntas-tb.fatihabdurrahman31.chatgpt.s=
+ite/favicon.svg" type=3D"image/svg+xml">
+  <link rel=3D"stylesheet" href=3D"https://tuntas-tb.fatihabdurrahman31.cha=
+tgpt.site/styles.css">
+</head>
+<body>
+  <div class=3D"app-shell">
+    <aside class=3D"sidebar" id=3D"sidebar" aria-label=3D"Navigasi utama">
+      <div class=3D"brand">
+        <span class=3D"brand-mark" aria-hidden=3D"true"><span></span><span>=
+</span><span></span></span>
+        <div><strong>TUNTAS-TB</strong><small>Pendampingan terarah</small><=
+/div>
+      </div>
+
+      <nav class=3D"main-nav">
+        <button class=3D"nav-item active" data-page=3D"today"><span class=
+=3D"icon" data-icon=3D"home"><svg viewBox=3D"0 0 24 24"><path d=3D"m3 11 9-=
+7 9 7"></path><path d=3D"M5 10v10h14V10M9 20v-6h6v6"></path></svg></span><s=
+pan>Hari Ini</span></button>
+        <button class=3D"nav-item" data-page=3D"patients"><span class=3D"ic=
+on" data-icon=3D"users"><svg viewBox=3D"0 0 24 24"><path d=3D"M16 21v-2a4 4=
+ 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx=3D"9" cy=3D"7" r=3D"4"></ci=
+rcle><path d=3D"M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path=
+></svg></span><span>Pasien</span></button>
+        <button class=3D"nav-item" data-page=3D"followups"><span class=3D"i=
+con" data-icon=3D"check"><svg viewBox=3D"0 0 24 24"><path d=3D"M9 11l3 3L22=
+ 4"></path><path d=3D"M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-=
+2h11"></path></svg></span><span>Tindak Lanjut</span><b class=3D"nav-count">=
+4</b></button>
+        <button class=3D"nav-item" data-page=3D"messages"><span class=3D"ic=
+on" data-icon=3D"message"><svg viewBox=3D"0 0 24 24"><path d=3D"M21 15a4 4 =
+0 0 1-4 4H8l-5 3 1.7-5.1A7 7 0 0 1 3 12V8a5 5 0 0 1 5-5h9a4 4 0 0 1 4 4z"><=
+/path></svg></span><span>Pesan</span></button>
+        <button class=3D"nav-item" data-page=3D"reports"><span class=3D"ico=
+n" data-icon=3D"chart"><svg viewBox=3D"0 0 24 24"><path d=3D"M4 20V10M10 20=
+V4M16 20v-7M22 20H2"></path></svg></span><span>Laporan</span></button>
+      </nav>
+
+      <div class=3D"sidebar-bottom">
+        <button class=3D"nav-item" data-page=3D"settings"><span class=3D"ic=
+on" data-icon=3D"settings"><svg viewBox=3D"0 0 24 24"><circle cx=3D"12" cy=
+=3D"12" r=3D"3"></circle><path d=3D"M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-=
+2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4=
+ 1.1V21h-4v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2=
+.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-=
+4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06=
+A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.09A1.7 1.=
+7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 =
+0 0 19.4 9c.13.38.35.73.64 1 .3.27.68.4 1.08.4H21v4h-.09A1.7 1.7 0 0 0 19.4=
+ 15z"></path></svg></span><span>Pengaturan</span></button>
+        <div class=3D"profile-card">
+          <div class=3D"avatar">RN</div>
+          <div><strong>Rina Nuraini</strong><small>Petugas TB</small></div>
+          <button class=3D"icon-button" aria-label=3D"Buka menu profil"><sp=
+an class=3D"icon" data-icon=3D"more"><svg viewBox=3D"0 0 24 24"><circle cx=
+=3D"5" cy=3D"12" r=3D"1"></circle><circle cx=3D"12" cy=3D"12" r=3D"1"></cir=
+cle><circle cx=3D"19" cy=3D"12" r=3D"1"></circle></svg></span></button>
+        </div>
+      </div>
+    </aside>
+
+    <main class=3D"workspace">
+      <header class=3D"mobile-header">
+        <button class=3D"icon-button" id=3D"menuBtn" aria-label=3D"Buka nav=
+igasi"><span class=3D"icon" data-icon=3D"menu"><svg viewBox=3D"0 0 24 24"><=
+path d=3D"M4 6h16M4 12h16M4 18h16"></path></svg></span></button>
+        <div class=3D"mobile-brand">TUNTAS-TB</div>
+        <button class=3D"icon-button" aria-label=3D"Notifikasi"><span class=
+=3D"icon" data-icon=3D"bell"><svg viewBox=3D"0 0 24 24"><path d=3D"M18 8a6 =
+6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"></path></svg></span><i cla=
+ss=3D"notification-dot"></i></button>
+      </header>
+
+      <div class=3D"demo-banner">
+        <span class=3D"demo-dot"></span>
+        <strong>Mode demonstrasi</strong>
+        <span>Semua nama dan aktivitas pada layar ini adalah data simulasi.=
+</span>
+        <button id=3D"openSimulator">Buka simulasi WhatsApp</button>
+      </div>
+
+      <section id=3D"pageContent" class=3D"page-content" aria-live=3D"polit=
+e"><div class=3D"page-head"><div class=3D"title-group"><span class=3D"eyebr=
+ow">SELAMAT PAGI, RINA</span><h1>Ada 4 pasien yang perlu ditinjau hari ini.=
+</h1><p>Urutan kerja disusun dari sinyal yang paling membutuhkan perhatian.=
+ Verifikasi tetap dilakukan oleh petugas.</p></div><div class=3D"head-meta"=
+><strong>Puskesmas Sukamaju</strong>Senin, 15 September 2026<br>Terakhir di=
+perbarui 18.14</div></div>
+  <div class=3D"overview-strip"><div class=3D"overview-main"><div><strong>M=
+ulai dari pasien dengan prioritas tertinggi</strong><span>TB-024 menunggu t=
+indak lanjut sejak pukul 18.13.</span></div><button class=3D"primary-button=
+" data-open-patient=3D"">Tinjau pasien berikutnya</button></div><div class=
+=3D"overview-stat"><strong>2</strong><span>Prioritas merah</span></div><div=
+ class=3D"overview-stat"><strong>2</strong><span>Prioritas kuning</span></d=
+iv><div class=3D"overview-stat"><strong>86%</strong><span>Respons hari ini<=
+/span></div></div>
+  <div class=3D"content-grid"><section class=3D"surface"><div class=3D"surf=
+ace-head"><div><h2>Prioritas utama</h2><p>Disusun berdasarkan sinyal terbar=
+u dan status tindak lanjut.</p></div><button class=3D"text-button" data-pag=
+e-jump=3D"followups">Lihat semua</button></div><div class=3D"priority-list"=
+><div class=3D"priority-row" data-patient=3D"TB-024" tabindex=3D"0" role=3D=
+"button" aria-label=3D"Tinjau TB-024, prioritas Merah"><span class=3D"prior=
+ity-line red"></span><div class=3D"patient-id"><strong>TB-024</strong><smal=
+l>S=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2 A=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=
+=A2</small></div><div class=3D"reason"><strong>Sedang lelah atau ingin berh=
+enti</strong><span>Respons diterima 18.13</span></div><span class=3D"status=
+-badge red"><span class=3D"icon" data-icon=3D"alert"><svg viewBox=3D"0 0 24=
+ 24"><path d=3D"M10.3 3.6 2.1 18a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 =
+3.6a2 2 0 0 0-3.4 0z"></path><path d=3D"M12 9v4M12 17h.01"></path></svg></s=
+pan> Prioritas merah</span><span class=3D"row-time">Baru saja</span><button=
+ class=3D"row-action">Tinjau</button></div><div class=3D"priority-row" data=
+-patient=3D"TB-018" tabindex=3D"0" role=3D"button" aria-label=3D"Tinjau TB-=
+018, prioritas Merah"><span class=3D"priority-line red"></span><div class=
+=3D"patient-id"><strong>TB-018</strong><small>D=E2=80=A2=E2=80=A2=E2=80=A2=
+=E2=80=A2 P=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2</small></div><div class=3D"=
+reason"><strong>Obat hampir habis</strong><span>Perlu koordinasi ketersedia=
+an</span></div><span class=3D"status-badge red"><span class=3D"icon" data-i=
+con=3D"alert"><svg viewBox=3D"0 0 24 24"><path d=3D"M10.3 3.6 2.1 18a2 2 0 =
+0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><path d=3D=
+"M12 9v4M12 17h.01"></path></svg></span> Prioritas merah</span><span class=
+=3D"row-time">18 menit</span><button class=3D"row-action">Tinjau</button></=
+div><div class=3D"priority-row" data-patient=3D"TB-031" tabindex=3D"0" role=
+=3D"button" aria-label=3D"Tinjau TB-031, prioritas Kuning"><span class=3D"p=
+riority-line yellow"></span><div class=3D"patient-id"><strong>TB-031</stron=
+g><small>A=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2 R=E2=80=A2=E2=80=A2=E2=80=A2=
+=E2=80=A2</small></div><div class=3D"reason"><strong>Dua check-in belum dij=
+awab</strong><span>Perlu verifikasi kanal kontak</span></div><span class=3D=
+"status-badge yellow"><span class=3D"icon" data-icon=3D"info"><svg viewBox=
+=3D"0 0 24 24"><circle cx=3D"12" cy=3D"12" r=3D"10"></circle><path d=3D"M12=
+ 16v-4M12 8h.01"></path></svg></span> Prioritas kuning</span><span class=3D=
+"row-time">1 jam</span><button class=3D"row-action">Tinjau</button></div><d=
+iv class=3D"priority-row" data-patient=3D"TB-012" tabindex=3D"0" role=3D"bu=
+tton" aria-label=3D"Tinjau TB-012, prioritas Kuning"><span class=3D"priorit=
+y-line yellow"></span><div class=3D"patient-id"><strong>TB-012</strong><sma=
+ll>M=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2 S=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=
+=A2</small></div><div class=3D"reason"><strong>Kendala datang ke layanan</s=
+trong><span>Menunggu penjadwalan</span></div><span class=3D"status-badge ye=
+llow"><span class=3D"icon" data-icon=3D"info"><svg viewBox=3D"0 0 24 24"><c=
+ircle cx=3D"12" cy=3D"12" r=3D"10"></circle><path d=3D"M12 16v-4M12 8h.01">=
+</path></svg></span> Prioritas kuning</span><span class=3D"row-time">3 jam<=
+/span><button class=3D"row-action">Tinjau</button></div></div></section><as=
+ide class=3D"side-stack"><section class=3D"surface"><div class=3D"surface-h=
+ead"><div><h3>Tindak lanjut jatuh tempo</h3><p>Dua tugas perlu diselesaikan=
+.</p></div></div><div class=3D"due-list"><div class=3D"due-item"><span clas=
+s=3D"due-time">19.00</span><div><strong>Hubungi TB-024</strong><span>Verifi=
+kasi keinginan berhenti</span></div></div><div class=3D"due-item"><span cla=
+ss=3D"due-time">19.30</span><div><strong>Koordinasi TB-018</strong><span>Ke=
+tersediaan obat</span></div></div></div></section><section class=3D"surface=
+ response-card"><div class=3D"surface-head"><div><h3>Respons check-in</h3><=
+p>Tujuh hari terakhir</p></div><strong>86%</strong></div><div class=3D"resp=
+onse-chart" aria-label=3D"Grafik respons check-in tujuh hari"><i style=3D"h=
+eight:64%"></i><i style=3D"height:72%"></i><i style=3D"height:81%"></i><i s=
+tyle=3D"height:69%"></i><i style=3D"height:88%"></i><i style=3D"height:82%"=
+></i><i style=3D"height:86%"></i></div><div class=3D"chart-labels"><span>Se=
+n</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><sp=
+an>Sab</span><span>Min</span></div><p class=3D"chart-note">Angka menunjukka=
+n respons pesan, bukan bukti obat telah diminum.</p></section></aside></div=
+></section>
+    </main>
+  </div>
+
+  <div class=3D"overlay" id=3D"overlay"></div>
+
+  <aside class=3D"detail-panel" id=3D"detailPanel" aria-hidden=3D"true" ari=
+a-label=3D"Detail pasien">
+    <div class=3D"panel-head">
+      <div>
+        <button class=3D"back-link" id=3D"closePanel"><span class=3D"icon" =
+data-icon=3D"arrow-left"><svg viewBox=3D"0 0 24 24"><path d=3D"m15 18-6-6 6=
+-6"></path></svg></span> Kembali</button>
+        <div class=3D"patient-heading"><div><span class=3D"eyebrow">TB-024<=
+/span><h2>S=E2=80=A2=E2=80=A2=E2=80=A2=E2=80=A2 A=E2=80=A2=E2=80=A2=E2=80=
+=A2=E2=80=A2</h2></div><span class=3D"status-badge red"><span class=3D"icon=
+" data-icon=3D"alert"><svg viewBox=3D"0 0 24 24"><path d=3D"M10.3 3.6 2.1 1=
+8a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><p=
+ath d=3D"M12 9v4M12 17h.01"></path></svg></span> Prioritas merah</span></di=
+v>
+      </div>
+    </div>
+    <div class=3D"panel-body">
+      <div class=3D"reason-box red-border">
+        <span class=3D"icon" data-icon=3D"alert"><svg viewBox=3D"0 0 24 24"=
+><path d=3D"M10.3 3.6 2.1 18a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a=
+2 2 0 0 0-3.4 0z"></path><path d=3D"M12 9v4M12 17h.01"></path></svg></span>
+        <div><strong>Mengapa perlu ditinjau?</strong><p>Pasien memilih =E2=
+=80=9Csedang lelah atau ingin berhenti=E2=80=9D pada check-in hari ini dan =
+belum memiliki tindak lanjut aktif.</p></div>
+      </div>
+      <div class=3D"panel-actions">
+        <button class=3D"primary-button" id=3D"contactWhatsApp"><span class=
+=3D"icon" data-icon=3D"message"><svg viewBox=3D"0 0 24 24"><path d=3D"M21 1=
+5a4 4 0 0 1-4 4H8l-5 3 1.7-5.1A7 7 0 0 1 3 12V8a5 5 0 0 1 5-5h9a4 4 0 0 1 4=
+ 4z"></path></svg></span> Hubungi melalui WhatsApp</button>
+        <button class=3D"secondary-button" id=3D"recordFollowup">Catat hasi=
+l</button>
+        <button class=3D"danger-link">Eskalasi klinis</button>
+      </div>
+      <div class=3D"detail-grid">
+        <section>
+          <div class=3D"section-heading"><h3>Jejak pendampingan hari ini</h=
+3><span>15 September</span></div>
+          <div class=3D"timeline">
+            <div class=3D"timeline-row done"><time>18.00</time><span class=
+=3D"timeline-node"></span><div><strong>Check-in dikirim</strong><p>Pesan di=
+terima perangkat pasien.</p></div></div>
+            <div class=3D"timeline-row done"><time>18.12</time><span class=
+=3D"timeline-node"></span><div><strong>Pasien merespons</strong><p>=E2=80=
+=9CBelum sesuai jadwal.=E2=80=9D</p></div></div>
+            <div class=3D"timeline-row risk"><time>18.13</time><span class=
+=3D"timeline-node"></span><div><strong>Hambatan teridentifikasi</strong><p>=
+Sedang lelah atau ingin berhenti.</p></div></div>
+            <div class=3D"timeline-row pending"><time>Sekarang</time><span =
+class=3D"timeline-node"></span><div><strong>Menunggu tindak lanjut</strong>=
+<p>Belum ada petugas yang mencatat hasil.</p></div></div>
+          </div>
+        </section>
+        <aside class=3D"patient-summary">
+          <h3>Ringkasan pasien</h3>
+          <dl><div><dt>Petugas</dt><dd>Rina Nuraini</dd></div><div><dt>Chec=
+k-in berikutnya</dt><dd>Besok, 18.00</dd></div><div><dt>Persetujuan pesan</=
+dt><dd><span class=3D"mini-ok">Aktif</span></dd></div><div><dt>Respons 14 h=
+ari</dt><dd>11 dari 14</dd></div></dl>
+          <div class=3D"pattern-block"><span>Pola 14 hari</span><div class=
+=3D"care-trace" aria-label=3D"Jejak respons empat belas hari"><i class=3D"o=
+k"></i><i class=3D"ok"></i><i class=3D"ok"></i><i class=3D"miss"></i><i cla=
+ss=3D"ok"></i><i class=3D"ok"></i><i class=3D"warn"></i><i class=3D"ok"></i=
+><i class=3D"ok"></i><i class=3D"miss"></i><i class=3D"ok"></i><i class=3D"=
+warn"></i><i class=3D"ok"></i><i class=3D"risk"></i></div><small>Respons st=
+abil =E2=80=A2 Terlewat =E2=80=A2 Hambatan =E2=80=A2 Perlu tinjauan</small>=
+</div>
+        </aside>
+      </div>
+    </div>
+  </aside>
+
+  <div class=3D"modal" id=3D"simulatorModal" role=3D"dialog" aria-modal=3D"=
+true" aria-labelledby=3D"simulatorTitle" aria-hidden=3D"true">
+    <div class=3D"modal-card simulator-card">
+      <div class=3D"modal-head"><div><span class=3D"eyebrow">SIMULASI ALUR<=
+/span><h2 id=3D"simulatorTitle">Percakapan WhatsApp pasien</h2></div><butto=
+n class=3D"icon-button" id=3D"closeSimulator" aria-label=3D"Tutup"><span cl=
+ass=3D"icon" data-icon=3D"x"><svg viewBox=3D"0 0 24 24"><path d=3D"M18 6 6 =
+18M6 6l12 12"></path></svg></span></button></div>
+      <div class=3D"simulator-layout">
+        <div class=3D"phone-frame">
+          <div class=3D"phone-top"><button class=3D"icon-button small" aria=
+-label=3D"Kembali"><span class=3D"icon" data-icon=3D"arrow-left"><svg viewB=
+ox=3D"0 0 24 24"><path d=3D"m15 18-6-6 6-6"></path></svg></span></button><d=
+iv class=3D"wa-avatar">PS</div><div><strong>Pendamping Sehat</strong><small=
+>akun layanan</small></div><span class=3D"secure-label">Terproteksi</span><=
+/div>
+          <div class=3D"chat-area" id=3D"chatArea">
+            <div class=3D"date-chip">Hari ini</div>
+            <div class=3D"bubble incoming">Halo, ini pengingat pendampingan=
+ kesehatan Anda. Bagaimana jadwal hari ini?<time>18.00</time></div>
+            <div class=3D"quick-options" id=3D"initialOptions">
+              <button data-reply=3D"done">Sudah sesuai jadwal</button>
+              <button data-reply=3D"missed">Belum sesuai jadwal</button>
+              <button data-reply=3D"help">Saya membutuhkan bantuan</button>
+            </div>
+          </div>
+          <div class=3D"chat-input"><span class=3D"icon" data-icon=3D"lock"=
+><svg viewBox=3D"0 0 24 24"><rect x=3D"4" y=3D"10" width=3D"16" height=3D"1=
+1" rx=3D"2"></rect><path d=3D"M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span>=
+<span>Pilih jawaban di atas</span><button aria-label=3D"Kirim"><span class=
+=3D"icon" data-icon=3D"send"><svg viewBox=3D"0 0 24 24"><path d=3D"m22 2-7 =
+20-4-9-9-4zM22 2 11 13"></path></svg></span></button></div>
+        </div>
+        <div class=3D"simulator-info">
+          <span class=3D"step-label">SKENARIO DEMO</span>
+          <h3>Pasien mengalami hambatan pengobatan</h3>
+          <p>Pilih jawaban di layar ponsel. Respons akan masuk ke dashboard=
+ dan mengubah prioritas pasien secara transparan.</p>
+          <div class=3D"flow-list"><div class=3D"active"><b>1</b><span><str=
+ong>Check-in</strong><small>Pasien menjawab singkat</small></span></div><di=
+v><b>2</b><span><strong>Pemetaan hambatan</strong><small>Sistem meminta ala=
+san</small></span></div><div><b>3</b><span><strong>Tindak lanjut</strong><s=
+mall>Petugas menerima prioritas</small></span></div></div>
+          <button class=3D"text-button" id=3D"resetChat">Ulangi simulasi</b=
+utton>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class=3D"modal" id=3D"followupModal" role=3D"dialog" aria-modal=3D"t=
+rue" aria-labelledby=3D"followupTitle" aria-hidden=3D"true">
+    <div class=3D"modal-card form-modal">
+      <div class=3D"modal-head"><div><span class=3D"eyebrow">TB-024</span><=
+h2 id=3D"followupTitle">Catat hasil tindak lanjut</h2></div><button class=
+=3D"icon-button" data-close-followup=3D"" aria-label=3D"Tutup"><span class=
+=3D"icon" data-icon=3D"x"><svg viewBox=3D"0 0 24 24"><path d=3D"M18 6 6 18M=
+6 6l12 12"></path></svg></span></button></div>
+      <form id=3D"followupForm">
+        <label>Metode kontak<select required=3D""><option value=3D"">Pilih =
+metode</option><option>WhatsApp</option><option>Telepon</option><option>Kun=
+jungan</option></select></label>
+        <label>Hasil tindak lanjut<select required=3D""><option value=3D"">=
+Pilih hasil</option><option>Pasien berhasil dihubungi</option><option>Dijad=
+walkan konsultasi</option><option>Dirujuk ke tenaga klinis</option><option>=
+Belum dapat dihubungi</option></select></label>
+        <label>Catatan singkat<textarea rows=3D"4" placeholder=3D"Tuliskan =
+fakta penting tanpa diagnosis baru"></textarea></label>
+        <div class=3D"form-note"><span class=3D"icon" data-icon=3D"info"><s=
+vg viewBox=3D"0 0 24 24"><circle cx=3D"12" cy=3D"12" r=3D"10"></circle><pat=
+h d=3D"M12 16v-4M12 8h.01"></path></svg></span> Catatan ini merupakan dokum=
+entasi pendampingan, bukan perubahan terapi.</div>
+        <div class=3D"modal-actions"><button type=3D"button" class=3D"secon=
+dary-button" data-close-followup=3D"">Batal</button><button type=3D"submit"=
+ class=3D"primary-button">Simpan tindak lanjut</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class=3D"toast" id=3D"toast" role=3D"status"><span class=3D"icon" da=
+ta-icon=3D"check-circle"><svg viewBox=3D"0 0 24 24"><path d=3D"M22 11.1V12a=
+10 10 0 1 1-5.9-9.1"></path><path d=3D"m22 4-10 10.01-3-3"></path></svg></s=
+pan><span id=3D"toastText">Tindak lanjut berhasil disimpan.</span></div>
+ =20
+
+
+</body></html>
+------MultipartBoundary--G0hbB5OyudLoNJ1XkSXMFeacWd76z5wnkhXSCLll7F----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://tuntas-tb.fatihabdurrahman31.chatgpt.site/styles.css
+
+@charset "utf-8";
+
+:root { --canvas: #f4f6f3; --paper: #ffffff; --paper-soft: #f9faf8; --ink: =
+#192723; --muted: #66736e; --faint: #8b9691; --line: #dce3de; --line-strong=
+: #cbd5cf; --primary: #1f5d4a; --primary-dark: #164737; --primary-soft: #e1=
+eee8; --warning: #996515; --warning-soft: #fff2cf; --danger: #993c3c; --dan=
+ger-soft: #fbe8e5; --info: #3e6671; --info-soft: #e5f0f2; --shadow: 0 12px =
+36px rgba(24, 47, 38, .10); --font: Inter, "Segoe UI", Arial, sans-serif; }
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body { margin: 0px; background: var(--canvas); color: var(--ink); font-fami=
+ly: var(--font); -webkit-font-smoothing: antialiased; }
+
+button, input, select, textarea { font: inherit; }
+
+button { color: inherit; }
+
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:f=
+ocus-visible { outline: rgba(31, 93, 74, 0.22) solid 3px; outline-offset: 2=
+px; }
+
+.app-shell { min-height: 100vh; display: grid; grid-template-columns: 248px=
+ minmax(0px, 1fr); }
+
+.sidebar { position: sticky; top: 0px; height: 100vh; background: rgb(251, =
+252, 250); border-right: 1px solid var(--line); padding: 28px 18px 20px; di=
+splay: flex; flex-direction: column; z-index: 20; }
+
+.brand { display: flex; align-items: center; gap: 12px; padding: 0px 10px 2=
+8px; }
+
+.brand strong { display: block; font-size: 0.96rem; letter-spacing: 0.03em;=
+ }
+
+.brand small { display: block; color: var(--muted); margin-top: 3px; font-s=
+ize: 0.73rem; }
+
+.brand-mark { width: 34px; height: 34px; display: grid; grid-template-colum=
+ns: repeat(3, 1fr); align-items: end; gap: 3px; padding: 7px; border-radius=
+: 9px; background: var(--primary); }
+
+.brand-mark span { display: block; border-radius: 3px; background: rgb(255,=
+ 255, 255); }
+
+.brand-mark span:nth-child(1) { height: 8px; opacity: 0.7; }
+
+.brand-mark span:nth-child(2) { height: 18px; }
+
+.brand-mark span:nth-child(3) { height: 12px; opacity: 0.84; }
+
+.main-nav { display: grid; gap: 5px; }
+
+.nav-item { width: 100%; min-height: 44px; border: 0px; background: transpa=
+rent; border-radius: 9px; display: flex; align-items: center; gap: 12px; pa=
+dding: 0px 12px; cursor: pointer; color: rgb(83, 97, 92); text-align: left;=
+ font-weight: 580; font-size: 0.91rem; }
+
+.nav-item:hover { background: rgb(240, 244, 241); color: var(--ink); }
+
+.nav-item.active { color: var(--primary-dark); background: var(--primary-so=
+ft); box-shadow: inset 3px 0 0 var(--primary); }
+
+.nav-item .icon { width: 19px; height: 19px; }
+
+.nav-count { margin-left: auto; min-width: 22px; height: 22px; border-radiu=
+s: 6px; display: grid; place-items: center; background: var(--danger-soft);=
+ color: var(--danger); font-size: 0.72rem; }
+
+.sidebar-bottom { margin-top: auto; }
+
+.profile-card { margin-top: 16px; padding: 16px 10px 2px; border-top: 1px s=
+olid var(--line); display: grid; grid-template-columns: 36px 1fr 32px; alig=
+n-items: center; gap: 10px; }
+
+.avatar { width: 36px; height: 36px; display: grid; place-items: center; bo=
+rder-radius: 9px; background: rgb(215, 231, 223); color: var(--primary-dark=
+); font-size: 0.75rem; font-weight: 750; }
+
+.profile-card strong, .profile-card small { display: block; }
+
+.profile-card strong { font-size: 0.78rem; }
+
+.profile-card small { font-size: 0.7rem; color: var(--muted); margin-top: 3=
+px; }
+
+.icon-button { position: relative; width: 38px; height: 38px; padding: 0px;=
+ border: 1px solid transparent; border-radius: 8px; background: transparent=
+; display: grid; place-items: center; cursor: pointer; }
+
+.icon-button:hover { background: rgb(238, 242, 239); border-color: var(--li=
+ne); }
+
+.icon-button .icon { width: 19px; height: 19px; }
+
+.workspace { min-width: 0px; }
+
+.mobile-header { display: none; }
+
+.demo-banner { min-height: 42px; background: rgb(237, 243, 240); border-bot=
+tom: 1px solid rgb(217, 229, 223); display: flex; align-items: center; padd=
+ing: 8px 40px; gap: 9px; color: rgb(73, 97, 88); font-size: 0.78rem; }
+
+.demo-banner strong { color: var(--primary-dark); }
+
+.demo-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--=
+primary); }
+
+.demo-banner button { margin-left: auto; border: 0px; background: transpare=
+nt; color: var(--primary-dark); font-weight: 720; cursor: pointer; text-dec=
+oration: underline; text-underline-offset: 3px; }
+
+.page-content { max-width: 1340px; margin: 0px auto; padding: 34px 42px 60p=
+x; }
+
+.page-head { display: flex; align-items: flex-start; justify-content: space=
+-between; gap: 24px; margin-bottom: 28px; }
+
+.page-head .title-group { max-width: 680px; }
+
+.eyebrow { display: block; color: var(--muted); font-weight: 720; font-size=
+: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; margin-bottom:=
+ 6px; }
+
+h1, h2, h3, p { margin-top: 0px; }
+
+h1 { font-size: clamp(1.8rem, 2.5vw, 2.55rem); line-height: 1.12; letter-sp=
+acing: -0.035em; margin-bottom: 9px; }
+
+h2 { font-size: 1.4rem; letter-spacing: -0.02em; }
+
+h3 { font-size: 0.98rem; }
+
+.page-head p { color: var(--muted); line-height: 1.55; margin: 0px; }
+
+.head-meta { text-align: right; color: var(--muted); font-size: 0.78rem; li=
+ne-height: 1.6; padding-top: 3px; }
+
+.head-meta strong { color: var(--ink); display: block; font-size: 0.86rem; =
+}
+
+.primary-button, .secondary-button { min-height: 42px; border-radius: 8px; =
+padding: 0px 16px; cursor: pointer; font-weight: 700; border: 1px solid tra=
+nsparent; display: inline-flex; align-items: center; justify-content: cente=
+r; gap: 8px; }
+
+.primary-button { background: var(--primary); color: rgb(255, 255, 255); bo=
+x-shadow: rgba(11, 55, 41, 0.15) 0px 3px 0px; }
+
+.primary-button:hover { background: var(--primary-dark); }
+
+.secondary-button { background: var(--paper); border-color: var(--line-stro=
+ng); }
+
+.secondary-button:hover { background: rgb(247, 249, 247); }
+
+.danger-link { min-height: 42px; background: transparent; color: var(--dang=
+er); border: 0px; font-weight: 700; cursor: pointer; padding: 0px 10px; }
+
+.icon { display: inline-flex; color: currentcolor; }
+
+.icon svg { width: 100%; height: 100%; fill: none; stroke: currentcolor; st=
+roke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.overview-strip { display: grid; grid-template-columns: minmax(0px, 1.7fr) =
+repeat(3, minmax(130px, 0.65fr)); border: 1px solid var(--line); border-rad=
+ius: 12px; background: var(--paper); overflow: hidden; margin-bottom: 22px;=
+ }
+
+.overview-main { padding: 23px 25px; background: rgb(248, 250, 248); displa=
+y: flex; align-items: center; justify-content: space-between; gap: 20px; }
+
+.overview-main strong { display: block; font-size: 1.12rem; margin-bottom: =
+5px; }
+
+.overview-main span { color: var(--muted); font-size: 0.83rem; }
+
+.overview-stat { padding: 19px 20px; border-left: 1px solid var(--line); di=
+splay: flex; flex-direction: column; justify-content: center; }
+
+.overview-stat strong { font-size: 1.45rem; font-variant-numeric: tabular-n=
+ums; }
+
+.overview-stat span { color: var(--muted); font-size: 0.75rem; margin-top: =
+4px; }
+
+.content-grid { display: grid; grid-template-columns: minmax(0px, 1fr) 310p=
+x; gap: 22px; align-items: start; }
+
+.surface { background: var(--paper); border: 1px solid var(--line); border-=
+radius: 12px; }
+
+.surface-head { min-height: 66px; padding: 0px 20px; border-bottom: 1px sol=
+id var(--line); display: flex; align-items: center; justify-content: space-=
+between; gap: 16px; }
+
+.surface-head h2, .surface-head h3 { margin: 0px; }
+
+.surface-head p { margin: 4px 0px 0px; color: var(--muted); font-size: 0.77=
+rem; }
+
+.text-button { border: 0px; background: transparent; color: var(--primary);=
+ font-weight: 720; cursor: pointer; padding: 8px; }
+
+.priority-list { display: grid; }
+
+.priority-row { display: grid; grid-template-columns: 12px minmax(150px, 1.=
+05fr) minmax(180px, 1.5fr) 120px 70px 82px; align-items: center; gap: 14px;=
+ min-height: 78px; padding: 12px 20px; border-bottom: 1px solid rgb(237, 24=
+0, 237); cursor: pointer; }
+
+.priority-row:last-child { border-bottom: 0px; }
+
+.priority-row:hover { background: rgb(250, 251, 249); }
+
+.priority-line { height: 40px; width: 4px; border-radius: 5px; background: =
+var(--warning); }
+
+.priority-line.red { background: var(--danger); }
+
+.patient-id strong, .patient-id small { display: block; }
+
+.patient-id strong { font-size: 0.9rem; }
+
+.patient-id small { color: var(--muted); margin-top: 4px; font-size: 0.72re=
+m; }
+
+.reason strong { display: block; font-size: 0.83rem; }
+
+.reason span { display: block; color: var(--muted); font-size: 0.72rem; mar=
+gin-top: 4px; }
+
+.status-badge { width: fit-content; display: inline-flex; align-items: cent=
+er; gap: 6px; min-height: 27px; padding: 0px 8px; border-radius: 6px; font-=
+size: 0.7rem; font-weight: 740; white-space: nowrap; }
+
+.status-badge .icon { width: 13px; height: 13px; }
+
+.status-badge.red { background: var(--danger-soft); color: var(--danger); }
+
+.status-badge.yellow { background: var(--warning-soft); color: var(--warnin=
+g); }
+
+.status-badge.green { background: var(--primary-soft); color: var(--primary=
+-dark); }
+
+.row-time { color: var(--muted); font-size: 0.72rem; text-align: right; }
+
+.row-action { width: 82px; height: 34px; border-radius: 7px; border: 1px so=
+lid var(--line-strong); background: rgb(255, 255, 255); cursor: pointer; fo=
+nt-weight: 700; font-size: 0.75rem; }
+
+.row-action:hover { border-color: var(--primary); color: var(--primary); }
+
+.side-stack { display: grid; gap: 18px; }
+
+.due-list { padding: 7px 18px 12px; }
+
+.due-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padd=
+ing: 13px 0px; border-bottom: 1px solid rgb(237, 240, 237); }
+
+.due-item:last-child { border-bottom: 0px; }
+
+.due-time { font-weight: 750; font-size: 0.74rem; color: var(--danger); pad=
+ding-top: 2px; }
+
+.due-item strong { font-size: 0.8rem; display: block; }
+
+.due-item span { font-size: 0.7rem; color: var(--muted); display: block; ma=
+rgin-top: 4px; }
+
+.response-card { padding-bottom: 16px; }
+
+.response-chart { height: 120px; padding: 18px 16px 0px; display: flex; ali=
+gn-items: flex-end; gap: 8px; }
+
+.response-chart i { flex: 1 1 0%; background: rgb(215, 230, 223); border-ra=
+dius: 4px 4px 1px 1px; min-height: 18px; position: relative; }
+
+.response-chart i:last-child { background: var(--primary); }
+
+.chart-labels { display: flex; justify-content: space-between; padding: 8px=
+ 17px 0px; color: var(--faint); font-size: 0.65rem; }
+
+.chart-note { margin: 12px 17px 0px; color: var(--muted); font-size: 0.72re=
+m; line-height: 1.45; }
+
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; =
+}
+
+.search-box { position: relative; flex: 1 1 0%; min-width: 220px; }
+
+.search-box .icon { position: absolute; left: 12px; top: 12px; width: 18px;=
+ height: 18px; color: var(--faint); }
+
+.search-box input, .filter-select, select, textarea { width: 100%; border: =
+1px solid var(--line-strong); border-radius: 8px; background: rgb(255, 255,=
+ 255); color: var(--ink); }
+
+.search-box input { height: 42px; padding: 0px 12px 0px 40px; }
+
+.filter-select { width: auto; min-width: 145px; height: 42px; padding: 0px =
+34px 0px 12px; }
+
+.data-table { overflow: hidden; }
+
+.table-head, .table-row { display: grid; grid-template-columns: 1.05fr 1.6f=
+r 0.8fr 0.8fr 1fr 0.65fr; gap: 16px; align-items: center; padding: 0px 18px=
+; }
+
+.table-head { min-height: 44px; background: rgb(247, 249, 247); border-bott=
+om: 1px solid var(--line); color: var(--muted); font-size: 0.69rem; font-we=
+ight: 760; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.table-row { min-height: 66px; border-bottom: 1px solid rgb(237, 240, 237);=
+ font-size: 0.78rem; }
+
+.table-row:last-child { border-bottom: 0px; }
+
+.table-row:hover { background: rgb(251, 252, 251); }
+
+.table-row strong { display: block; font-size: 0.8rem; }
+
+.table-row small { display: block; color: var(--muted); margin-top: 3px; }
+
+.action-link { border: 0px; background: transparent; color: var(--primary);=
+ font-weight: 720; cursor: pointer; text-align: left; padding: 0px; }
+
+.empty-page { min-height: 420px; display: grid; place-items: center; text-a=
+lign: center; padding: 32px; }
+
+.empty-page .empty-icon { width: 54px; height: 54px; margin: 0px auto 16px;=
+ border-radius: 14px; display: grid; place-items: center; background: var(-=
+-primary-soft); color: var(--primary); }
+
+.empty-page .icon { width: 25px; height: 25px; }
+
+.empty-page p { max-width: 430px; color: var(--muted); line-height: 1.6; }
+
+.report-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px=
+; }
+
+.report-card { padding: 22px; }
+
+.report-card h3 { margin-bottom: 4px; }
+
+.report-card > p { color: var(--muted); font-size: 0.74rem; }
+
+.big-number { font-size: 2.35rem; letter-spacing: -0.05em; font-weight: 760=
+; margin: 20px 0px 3px; }
+
+.big-number + span { color: var(--muted); font-size: 0.73rem; }
+
+.bar-list { display: grid; gap: 13px; margin-top: 20px; }
+
+.bar-row { display: grid; grid-template-columns: 120px 1fr 26px; align-item=
+s: center; gap: 10px; font-size: 0.72rem; }
+
+.bar-track { height: 8px; background: rgb(237, 241, 238); border-radius: 4p=
+x; overflow: hidden; }
+
+.bar-track i { display: block; height: 100%; background: var(--primary); bo=
+rder-radius: inherit; }
+
+.report-disclaimer { grid-column: 1 / -1; padding: 14px 16px; border: 1px s=
+olid rgb(214, 227, 222); background: rgb(240, 246, 243); color: rgb(72, 97,=
+ 88); border-radius: 9px; font-size: 0.76rem; line-height: 1.5; }
+
+.message-log { padding: 0px; }
+
+.message-row { min-height: 70px; padding: 13px 18px; display: grid; grid-te=
+mplate-columns: 42px 1fr 110px 110px; gap: 12px; align-items: center; borde=
+r-bottom: 1px solid rgb(237, 240, 237); }
+
+.message-row:last-child { border: 0px; }
+
+.message-symbol { width: 36px; height: 36px; display: grid; place-items: ce=
+nter; border-radius: 9px; background: var(--primary-soft); color: var(--pri=
+mary); }
+
+.message-symbol .icon { width: 18px; height: 18px; }
+
+.message-row strong { display: block; font-size: 0.8rem; }
+
+.message-row small { color: var(--muted); font-size: 0.7rem; }
+
+.overlay { position: fixed; inset: 0px; background: rgba(17, 28, 24, 0.34);=
+ opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 39; }
+
+.overlay.visible { opacity: 1; pointer-events: auto; }
+
+.detail-panel { position: fixed; inset: 0px 0px 0px auto; width: min(780px,=
+ 94vw); background: rgb(255, 255, 255); z-index: 40; transform: translateX(=
+102%); transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); box-shad=
+ow: rgba(19, 40, 32, 0.16) -20px 0px 50px; overflow-y: auto; }
+
+.detail-panel.open { transform: translateX(0px); }
+
+.panel-head { padding: 25px 28px 20px; border-bottom: 1px solid var(--line)=
+; position: sticky; top: 0px; background: rgba(255, 255, 255, 0.96); backdr=
+op-filter: blur(8px); z-index: 2; }
+
+.back-link { border: 0px; background: transparent; padding: 0px; display: i=
+nline-flex; align-items: center; gap: 6px; color: var(--muted); cursor: poi=
+nter; font-size: 0.76rem; }
+
+.back-link .icon { width: 16px; height: 16px; }
+
+.patient-heading { display: flex; align-items: center; justify-content: spa=
+ce-between; gap: 16px; margin-top: 17px; }
+
+.patient-heading h2 { margin: 0px; font-size: 1.65rem; }
+
+.panel-body { padding: 24px 28px 40px; }
+
+.reason-box { display: flex; gap: 12px; padding: 16px; border-top-color: ; =
+border-top-style: ; border-top-width: ; border-right-color: ; border-right-=
+style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: =
+; border-bottom-width: ; border-left-color: ; border-left-style: ; border-i=
+mage-source: ; border-image-slice: ; border-image-width: ; border-image-out=
+set: ; border-image-repeat: ; border-left-width: 4px; border-radius: 8px; b=
+ackground: rgb(255, 250, 250); }
+
+.reason-box.red-border { border-left-color: var(--danger); }
+
+.reason-box > .icon { width: 21px; height: 21px; color: var(--danger); flex=
+: 0 0 auto; }
+
+.reason-box strong { font-size: 0.8rem; }
+
+.reason-box p { margin: 5px 0px 0px; color: rgb(89, 101, 95); font-size: 0.=
+77rem; line-height: 1.55; }
+
+.panel-actions { display: flex; gap: 9px; flex-wrap: wrap; margin: 18px 0px=
+ 28px; }
+
+.panel-actions .icon { width: 17px; height: 17px; }
+
+.detail-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 26px=
+; }
+
+.section-heading { display: flex; align-items: center; justify-content: spa=
+ce-between; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+
+.section-heading h3 { margin: 0px; }
+
+.section-heading span { color: var(--muted); font-size: 0.72rem; }
+
+.timeline { padding-top: 16px; }
+
+.timeline-row { display: grid; grid-template-columns: 52px 18px 1fr; gap: 9=
+px; min-height: 78px; position: relative; }
+
+.timeline-row:not(:last-child)::after { content: ""; position: absolute; le=
+ft: 60px; top: 19px; width: 1px; height: calc(100% - 5px); background: var(=
+--line-strong); }
+
+.timeline-row time { color: var(--muted); font-size: 0.67rem; padding-top: =
+2px; }
+
+.timeline-node { width: 10px; height: 10px; border: 2px solid var(--primary=
+); background: rgb(255, 255, 255); border-radius: 50%; margin-top: 2px; z-i=
+ndex: 1; }
+
+.timeline-row.done .timeline-node { background: var(--primary); }
+
+.timeline-row.risk .timeline-node { background: var(--danger); border-color=
+: var(--danger); }
+
+.timeline-row.pending .timeline-node { border-color: var(--faint); }
+
+.timeline-row strong { display: block; font-size: 0.78rem; }
+
+.timeline-row p { margin: 4px 0px 0px; color: var(--muted); font-size: 0.71=
+rem; line-height: 1.4; }
+
+.patient-summary { border-left: 1px solid var(--line); padding-left: 22px; =
+}
+
+.patient-summary h3 { padding-bottom: 12px; border-bottom: 1px solid var(--=
+line); }
+
+.patient-summary dl { margin: 0px; }
+
+.patient-summary dl > div { padding: 10px 0px; display: flex; justify-conte=
+nt: space-between; gap: 12px; border-bottom: 1px solid rgb(237, 240, 237); =
+}
+
+.patient-summary dt { color: var(--muted); font-size: 0.68rem; }
+
+.patient-summary dd { margin: 0px; font-size: 0.7rem; font-weight: 700; tex=
+t-align: right; }
+
+.mini-ok { color: var(--primary); }
+
+.pattern-block { margin-top: 20px; }
+
+.pattern-block > span { display: block; color: var(--muted); font-size: 0.6=
+8rem; margin-bottom: 9px; }
+
+.care-trace { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5p=
+x; }
+
+.care-trace i { height: 10px; border-radius: 3px; background: rgb(217, 231,=
+ 224); }
+
+.care-trace i.miss { background: rgb(217, 222, 219); border: 1px dashed rgb=
+(131, 144, 137); }
+
+.care-trace i.warn { background: rgb(231, 182, 92); }
+
+.care-trace i.risk { background: var(--danger); }
+
+.pattern-block small { display: block; color: var(--faint); font-size: 0.6r=
+em; line-height: 1.5; margin-top: 8px; }
+
+.modal { position: fixed; inset: 0px; z-index: 60; background: rgba(14, 25,=
+ 21, 0.48); display: grid; place-items: center; padding: 24px; opacity: 0; =
+visibility: hidden; transition: 0.2s; }
+
+.modal.open { opacity: 1; visibility: visible; }
+
+.modal-card { background: rgb(255, 255, 255); border-radius: 14px; box-shad=
+ow: var(--shadow); width: min(900px, 96vw); max-height: 92vh; overflow: aut=
+o; }
+
+.modal-head { min-height: 76px; padding: 17px 22px; border-bottom: 1px soli=
+d var(--line); display: flex; align-items: center; justify-content: space-b=
+etween; }
+
+.modal-head h2 { margin: 0px; }
+
+.simulator-layout { display: grid; grid-template-columns: minmax(360px, 1.1=
+fr) minmax(260px, 0.9fr); min-height: 600px; }
+
+.phone-frame { margin: 26px auto; width: min(390px, 100% - 40px); border: 1=
+px solid rgb(205, 214, 209); border-radius: 24px; overflow: hidden; backgro=
+und: rgb(240, 236, 228); box-shadow: rgba(24, 40, 34, 0.1) 0px 10px 25px; d=
+isplay: grid; grid-template-rows: 62px 1fr 52px; }
+
+.phone-top { padding: 9px 12px; background: rgb(248, 250, 248); display: gr=
+id; grid-template-columns: 28px 36px 1fr auto; gap: 8px; align-items: cente=
+r; border-bottom: 1px solid var(--line); }
+
+.icon-button.small { width: 28px; height: 28px; }
+
+.wa-avatar { width: 34px; height: 34px; display: grid; place-items: center;=
+ border-radius: 50%; background: var(--primary); color: white; font-size: 0=
+.7rem; font-weight: 750; }
+
+.phone-top strong, .phone-top small { display: block; }
+
+.phone-top strong { font-size: 0.77rem; }
+
+.phone-top small { font-size: 0.62rem; color: var(--muted); margin-top: 2px=
+; }
+
+.secure-label { font-size: 0.58rem; color: var(--muted); }
+
+.chat-area { padding: 15px 14px; overflow-y: auto; max-height: 490px; backg=
+round-color: rgb(237, 233, 225); background-image: radial-gradient(rgba(31,=
+ 93, 74, 0.043) 1px, transparent 1px); background-size: 18px 18px; }
+
+.date-chip { width: fit-content; margin: 0px auto 12px; padding: 5px 9px; b=
+order-radius: 5px; background: rgba(255, 255, 255, 0.82); color: var(--mute=
+d); font-size: 0.61rem; }
+
+.bubble { max-width: 84%; padding: 10px 11px 17px; border-radius: 8px; font=
+-size: 0.73rem; line-height: 1.5; margin-bottom: 8px; position: relative; b=
+ox-shadow: rgba(0, 0, 0, 0.06) 0px 1px 1px; }
+
+.bubble.incoming { background: rgb(255, 255, 255); border-top-left-radius: =
+2px; }
+
+.bubble.outgoing { background: rgb(216, 242, 223); border-top-right-radius:=
+ 2px; margin-left: auto; }
+
+.bubble time { position: absolute; right: 7px; bottom: 4px; font-size: 0.52=
+rem; color: rgb(120, 130, 126); }
+
+.quick-options { display: grid; gap: 5px; margin: 5px 0px 14px; width: 88%;=
+ }
+
+.quick-options button { min-height: 36px; background: rgb(255, 255, 255); b=
+order: 1px solid rgb(201, 212, 206); border-radius: 7px; color: var(--prima=
+ry); font-size: 0.7rem; font-weight: 680; cursor: pointer; }
+
+.quick-options button:hover { background: rgb(244, 248, 246); }
+
+.chat-input { background: rgb(248, 250, 248); padding: 8px 10px; display: g=
+rid; grid-template-columns: 18px 1fr 34px; align-items: center; gap: 8px; c=
+olor: var(--faint); font-size: 0.66rem; }
+
+.chat-input .icon { width: 15px; height: 15px; }
+
+.chat-input button { width: 32px; height: 32px; border-radius: 50%; border:=
+ 0px; background: var(--primary); color: white; display: grid; place-items:=
+ center; }
+
+.simulator-info { padding: 45px 34px; border-left: 1px solid var(--line); b=
+ackground: rgb(250, 251, 249); }
+
+.step-label { display: block; color: var(--primary); font-size: 0.66rem; le=
+tter-spacing: 0.12em; font-weight: 780; margin-bottom: 13px; }
+
+.simulator-info h3 { font-size: 1.4rem; line-height: 1.25; margin-bottom: 1=
+2px; }
+
+.simulator-info > p { color: var(--muted); font-size: 0.78rem; line-height:=
+ 1.65; }
+
+.flow-list { margin: 28px 0px 18px; display: grid; }
+
+.flow-list > div { display: grid; grid-template-columns: 30px 1fr; gap: 10p=
+x; min-height: 64px; position: relative; }
+
+.flow-list > div:not(:last-child)::after { content: ""; position: absolute;=
+ left: 14px; top: 31px; width: 1px; height: 30px; background: var(--line-st=
+rong); }
+
+.flow-list b { width: 29px; height: 29px; display: grid; place-items: cente=
+r; border-radius: 50%; border: 1px solid var(--line-strong); color: var(--m=
+uted); font-size: 0.7rem; z-index: 1; background: rgb(255, 255, 255); }
+
+.flow-list .active b { background: var(--primary); color: rgb(255, 255, 255=
+); border-color: var(--primary); }
+
+.flow-list strong, .flow-list small { display: block; }
+
+.flow-list strong { font-size: 0.75rem; }
+
+.flow-list small { color: var(--muted); margin-top: 4px; font-size: 0.66rem=
+; }
+
+.form-modal { width: min(520px, 96vw); }
+
+.form-modal form { padding: 22px; display: grid; gap: 16px; }
+
+.form-modal label { display: grid; gap: 7px; font-size: 0.76rem; font-weigh=
+t: 700; }
+
+.form-modal select { height: 42px; padding: 0px 12px; }
+
+.form-modal textarea { padding: 11px 12px; resize: vertical; }
+
+.form-note { display: flex; align-items: flex-start; gap: 8px; padding: 11p=
+x; background: var(--info-soft); color: var(--info); border-radius: 7px; fo=
+nt-size: 0.7rem; line-height: 1.45; }
+
+.form-note .icon { width: 16px; height: 16px; flex: 0 0 auto; }
+
+.modal-actions { display: flex; justify-content: flex-end; gap: 9px; paddin=
+g-top: 4px; }
+
+.toast { position: fixed; right: 26px; bottom: 26px; z-index: 80; display: =
+flex; align-items: center; gap: 10px; padding: 13px 16px; border-radius: 9p=
+x; background: rgb(21, 61, 49); color: rgb(255, 255, 255); box-shadow: var(=
+--shadow); font-size: 0.76rem; transform: translateY(100px); opacity: 0; tr=
+ansition: 0.25s; }
+
+.toast.show { transform: translateY(0px); opacity: 1; }
+
+.toast .icon { width: 18px; height: 18px; }
+
+@media (max-width: 1040px) {
+  .app-shell { grid-template-columns: 210px minmax(0px, 1fr); }
+  .sidebar { padding-inline: 12px; }
+  .page-content { padding-inline: 24px; }
+  .demo-banner { padding-inline: 24px; }
+  .overview-strip { grid-template-columns: 1fr repeat(3, 0.45fr); }
+  .overview-main { padding: 18px; }
+  .overview-main .primary-button { display: none; }
+  .content-grid { grid-template-columns: 1fr; }
+  .side-stack { grid-template-columns: 1fr 1fr; }
+  .priority-row { grid-template-columns: 8px 1fr 1.4fr 110px 82px; }
+  .row-time { display: none; }
+}
+
+@media (max-width: 760px) {
+  .app-shell { display: block; }
+  .sidebar { position: fixed; left: 0px; transform: translateX(-105%); widt=
+h: 265px; transition: transform 0.22s; box-shadow: var(--shadow); }
+  .sidebar.open { transform: translateX(0px); }
+  .mobile-header { height: 58px; padding: 0px 15px; display: flex; align-it=
+ems: center; justify-content: space-between; background: rgb(255, 255, 255)=
+; border-bottom: 1px solid var(--line); position: sticky; top: 0px; z-index=
+: 15; }
+  .mobile-brand { font-size: 0.86rem; font-weight: 800; letter-spacing: 0.0=
+4em; }
+  .notification-dot { position: absolute; right: 7px; top: 7px; width: 7px;=
+ height: 7px; border-radius: 50%; background: var(--danger); border: 2px so=
+lid rgb(255, 255, 255); }
+  .demo-banner { padding: 9px 15px; align-items: flex-start; flex-wrap: wra=
+p; }
+  .demo-banner > span:not(.demo-dot) { display: none; }
+  .demo-banner button { margin-left: auto; }
+  .page-content { padding: 24px 15px 44px; }
+  .page-head { margin-bottom: 20px; }
+  .page-head h1 { font-size: 1.75rem; }
+  .head-meta { display: none; }
+  .overview-strip { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .overview-main { grid-column: 1 / -1; }
+  .overview-stat { padding: 14px 12px; border-left: 0px; border-top: 1px so=
+lid var(--line); }
+  .overview-stat + .overview-stat { border-left: 1px solid var(--line); }
+  .overview-stat strong { font-size: 1.15rem; }
+  .priority-row { grid-template-columns: 6px 1fr auto; gap: 10px; padding: =
+13px 14px; }
+  .priority-line { grid-row: 1 / span 2; }
+  .reason { grid-column: 2 / -1; }
+  .priority-row .status-badge { align-self: start; }
+  .row-action { display: none; }
+  .side-stack { grid-template-columns: 1fr; }
+  .filter-select { flex: 1 1 0%; min-width: 130px; }
+  .data-table { overflow-x: auto; }
+  .table-head, .table-row { min-width: 760px; }
+  .report-grid { grid-template-columns: 1fr; }
+  .report-disclaimer { grid-column: 1; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .patient-summary { border-left: 0px; border-top: 1px solid var(--line); p=
+adding: 20px 0px 0px; }
+  .panel-head, .panel-body { padding-left: 18px; padding-right: 18px; }
+  .patient-heading { align-items: flex-start; }
+  .patient-heading .status-badge { white-space: normal; }
+  .panel-actions > * { flex: 1 1 auto; }
+  .simulator-layout { grid-template-columns: 1fr; }
+  .simulator-info { border-left: 0px; border-top: 1px solid var(--line); pa=
+dding: 26px 24px; }
+  .phone-frame { height: 560px; }
+  .message-row { grid-template-columns: 38px 1fr 80px; }
+  .message-row > :last-child { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { scroll-behavior: auto !important; transition-durat=
+ion: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+------MultipartBoundary--G0hbB5OyudLoNJ1XkSXMFeacWd76z5wnkhXSCLll7F------
