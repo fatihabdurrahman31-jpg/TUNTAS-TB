@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="TUNTAS-TB membantu petugas layanan primer mengenali hambatan pengobatan dan memprioritaskan tindak lanjut pasien.">
   <meta name="theme-color" content="#1f5d4a">
-  <title>TUNTAS-TB — Ruang Kerja Petugas</title>
+  <title>TUNTAS-TB — Ruang Kerja Petugas (Sistem Penuh)</title>
   
   <style>
-    /* =========================================
-       1. VARIABLES & BASE SETUP
-       ========================================= */
     :root { 
       --canvas: #f4f6f3; 
       --paper: #ffffff; 
@@ -43,7 +40,6 @@
       -webkit-font-smoothing: antialiased; 
     }
     
-    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 10px; }
@@ -64,16 +60,19 @@
     .icon { display: inline-flex; color: currentcolor; }
     .icon svg { width: 100%; height: 100%; fill: none; stroke: currentcolor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* =========================================
-       2. LAYOUT & SIDEBAR
-       ========================================= */
     .app-shell { 
       min-height: 100vh; 
       display: grid; 
       grid-template-columns: 248px minmax(0, 1fr); 
       transition: 0.3s ease; 
     }
-    .workspace { min-width: 0; display: flex; flex-direction: column; }
+    .workspace { 
+      min-width: 0; 
+      display: flex; 
+      flex-direction: column; 
+      height: 100vh;
+      overflow: hidden; /* Prevent body scroll, handle per section */
+    }
 
     .sidebar { 
       position: sticky; top: 0; height: 100vh; 
@@ -82,7 +81,6 @@
       padding: 28px 18px 20px; 
       display: flex; flex-direction: column; 
       z-index: 20; 
-      transition: transform 0.3s ease, box-shadow 0.3s ease; 
     }
 
     .brand { display: flex; align-items: center; gap: 12px; padding: 0 10px 28px; }
@@ -113,6 +111,7 @@
       margin-left: auto; min-width: 22px; height: 22px; border-radius: 6px; 
       display: grid; place-items: center; 
       background: var(--danger-soft); color: var(--danger); font-size: 0.72rem; 
+      font-weight: bold;
     }
 
     .sidebar-bottom { margin-top: auto; }
@@ -121,9 +120,6 @@
     .profile-card strong { display: block; font-size: 0.78rem; }
     .profile-card small { display: block; font-size: 0.7rem; color: var(--muted); margin-top: 3px; }
 
-    /* =========================================
-       3. BUTTONS & COMPONENTS
-       ========================================= */
     .icon-button { 
       position: relative; width: 38px; height: 38px; padding: 0; border: 1px solid transparent; 
       border-radius: 8px; background: transparent; display: grid; place-items: center; 
@@ -151,35 +147,31 @@
     
     .danger-link { min-height: 42px; background: transparent; color: var(--danger); border: 0; font-weight: 700; cursor: pointer; padding: 0 10px; }
 
-    /* =========================================
-       4. TOP BANNER & HEADER
-       ========================================= */
+    .status-badge { 
+      width: fit-content; display: inline-flex; align-items: center; gap: 6px; 
+      min-height: 27px; padding: 0 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 740; white-space: nowrap; 
+    }
+    .status-badge .icon { width: 13px; height: 13px; }
+    .status-badge.red { background: var(--danger-soft); color: var(--danger); }
+    .status-badge.yellow { background: var(--warning-soft); color: var(--warning); }
+    .status-badge.green { background: #dcfce7; color: #166534; }
+    .status-badge.blue { background: #dbeafe; color: #1e40af; }
+
+    .page-section { 
+      display: none; 
+      flex: 1; 
+      overflow-y: auto; 
+    }
+    .page-section.active { display: block; }
+
     .mobile-header { display: none; }
-    .demo-banner { 
-      min-height: 42px; background: rgb(237, 243, 240); border-bottom: 1px solid rgb(217, 229, 223); 
-      display: flex; align-items: center; padding: 8px 40px; gap: 9px; color: rgb(73, 97, 88); font-size: 0.78rem; 
-    }
-    .demo-banner strong { color: var(--primary-dark); }
-    .demo-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--primary); animation: pulse 2s infinite; flex-shrink: 0; }
-    .demo-banner button { margin-left: auto; border: 0; background: transparent; color: var(--primary-dark); font-weight: 720; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
-    .demo-banner button:hover { color: var(--primary); }
-
-    @keyframes pulse { 
-      0% { box-shadow: 0 0 0 0 rgba(31, 93, 74, 0.4); } 
-      70% { box-shadow: 0 0 0 6px rgba(31, 93, 74, 0); } 
-      100% { box-shadow: 0 0 0 0 rgba(31, 93, 74, 0); } 
-    }
-
-    .page-content { max-width: 1340px; width: 100%; margin: 0 auto; padding: 34px 42px 60px; flex: 1; }
+    .page-content { max-width: 1340px; width: 100%; margin: 0 auto; padding: 34px 42px 60px; }
     .page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
     .eyebrow { display: block; color: var(--muted); font-weight: 720; font-size: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; margin-bottom: 6px; }
     .page-head p { color: var(--muted); line-height: 1.55; }
     .head-meta { text-align: right; color: var(--muted); font-size: 0.78rem; line-height: 1.6; padding-top: 3px; }
     .head-meta strong { color: var(--ink); display: block; font-size: 0.86rem; }
 
-    /* =========================================
-       5. DATA GRID & CARDS
-       ========================================= */
     .overview-strip { display: grid; grid-template-columns: minmax(0, 1.7fr) repeat(3, minmax(130px, 0.65fr)); border: 1px solid var(--line); border-radius: 12px; background: var(--paper); overflow: hidden; margin-bottom: 22px; }
     .overview-main { padding: 23px 25px; background: rgb(248, 250, 248); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .overview-main strong { display: block; font-size: 1.12rem; margin-bottom: 5px; }
@@ -222,39 +214,59 @@
     .patient-id small { color: var(--muted); margin-top: 4px; font-size: 0.72rem; }
     .reason strong { display: block; font-size: 0.83rem; }
     .reason span { display: block; color: var(--muted); font-size: 0.72rem; margin-top: 4px; }
-
-    .status-badge { 
-      width: fit-content; display: inline-flex; align-items: center; gap: 6px; 
-      min-height: 27px; padding: 0 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 740; white-space: nowrap; 
-    }
-    .status-badge .icon { width: 13px; height: 13px; }
-    .status-badge.red { background: var(--danger-soft); color: var(--danger); }
-    .status-badge.yellow { background: var(--warning-soft); color: var(--warning); }
     
     .row-time { color: var(--muted); font-size: 0.72rem; text-align: right; }
     .row-action { width: 82px; height: 34px; border-radius: 7px; border: 1px solid var(--line-strong); background: rgb(255, 255, 255); cursor: pointer; font-weight: 700; font-size: 0.75rem; transition: 0.2s; }
     .row-action:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
 
-    /* Side Stack Cards */
-    .side-stack { display: grid; gap: 18px; }
-    .due-list { padding: 7px 18px 12px; }
-    .due-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: 13px 0; border-bottom: 1px solid rgb(237, 240, 237); }
-    .due-item:last-child { border-bottom: 0; }
-    .due-time { font-weight: 750; font-size: 0.74rem; color: var(--danger); padding-top: 2px; }
-    .due-item strong { font-size: 0.8rem; display: block; }
-    .due-item span { font-size: 0.7rem; color: var(--muted); display: block; margin-top: 4px; }
+    .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .data-table th { padding: 16px 20px; font-size: 0.75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; border-bottom: 2px solid var(--line); background: var(--paper-soft); }
+    .data-table td { padding: 16px 20px; font-size: 0.85rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+    .data-table tbody tr:hover { background: rgb(250, 251, 249); cursor: pointer; }
 
-    .response-card { padding-bottom: 16px; }
-    .response-chart { height: 120px; padding: 18px 16px 0; display: flex; align-items: flex-end; gap: 8px; }
-    .response-chart i { flex: 1 1 0%; background: rgb(215, 230, 223); border-radius: 4px 4px 1px 1px; min-height: 18px; position: relative; transition: height 0.5s ease-out; }
-    .response-chart i:last-child { background: var(--primary); }
-    .response-chart i:hover { opacity: 0.8; }
-    .chart-labels { display: flex; justify-content: space-between; padding: 8px 17px 0; color: var(--faint); font-size: 0.65rem; }
-    .chart-note { margin: 12px 17px 0; color: var(--muted); font-size: 0.72rem; line-height: 1.45; }
+    .kanban-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
+    .kanban-col { background: var(--paper-soft); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+    .kanban-col h3 { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; display: flex; justify-content: space-between; }
+    .task-card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); cursor: pointer; transition: 0.2s;}
+    .task-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08);}
+    .task-card .task-head { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .task-card .task-title { font-weight: 700; font-size: 0.85rem; }
+    .task-card .task-meta { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
 
-    /* =========================================
-       6. OVERLAYS, MODALS & SLIDEOUT
-       ========================================= */
+    .inbox-layout { display: grid; grid-template-columns: 320px 1fr; height: 100%; border-top: 1px solid var(--line); background: var(--paper); }
+    .inbox-sidebar { border-right: 1px solid var(--line); display: flex; flex-direction: column; background: var(--paper-soft); }
+    .inbox-header { padding: 16px; border-bottom: 1px solid var(--line); background: var(--paper); }
+    .chat-list { flex: 1; overflow-y: auto; }
+    .chat-list-item { padding: 16px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 42px 1fr; gap: 12px; cursor: pointer; transition: 0.2s; }
+    .chat-list-item:hover { background: var(--canvas); }
+    .chat-list-item.active { background: var(--primary-soft); }
+    .chat-list-item .chat-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--line-strong); display: grid; place-items: center; color: white; font-weight: bold; }
+    .chat-list-item.active .chat-avatar { background: var(--primary); }
+    .chat-list-item h4 { margin: 0 0 4px; font-size: 0.88rem; display: flex; justify-content: space-between; }
+    .chat-list-item h4 span { font-size: 0.7rem; color: var(--muted); font-weight: normal; }
+    .chat-list-item p { margin: 0; font-size: 0.75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    
+    .chat-window { display: flex; flex-direction: column; background: rgb(237, 233, 225); background-image: radial-gradient(rgba(31, 93, 74, 0.043) 1px, transparent 1px); background-size: 18px 18px; }
+    .chat-window-head { padding: 16px 24px; background: var(--paper); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 16px; }
+    .chat-window-head .wa-badge { font-size: 0.7rem; padding: 4px 8px; background: #e0f2fe; color: #0284c7; border-radius: 4px; font-weight: 600; margin-left: auto; display: flex; align-items: center; gap: 4px;}
+    .chat-history { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .chat-input-bar { padding: 16px 24px; background: var(--paper-soft); border-top: 1px solid var(--line); display: flex; gap: 12px; }
+    .chat-input-bar input { flex: 1; height: 48px; border-radius: 24px; padding: 0 20px; border: 1px solid var(--line-strong); }
+    .chat-input-bar button { width: 48px; height: 48px; border-radius: 50%; background: var(--primary); color: white; border: none; display: grid; place-items: center; cursor: pointer; }
+    .chat-input-bar button:hover { background: var(--primary-dark); }
+
+    .bubble { max-width: 65%; padding: 12px 16px 20px; border-radius: 12px; font-size: 0.85rem; line-height: 1.5; position: relative; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+    .bubble.incoming { background: rgb(255, 255, 255); border-top-left-radius: 4px; align-self: flex-start; }
+    .bubble.outgoing { background: #dcf8c6; border-top-right-radius: 4px; align-self: flex-end; }
+    .bubble time { position: absolute; right: 10px; bottom: 6px; font-size: 0.65rem; color: rgba(0,0,0,0.4); }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 24px; }
+    .stat-card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
+    .stat-card h4 { margin: 0 0 8px; color: var(--muted); font-size: 0.85rem; font-weight: 600; }
+    .stat-card .stat-value { font-size: 2.5rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 8px;}
+    .stat-card .stat-trend { font-size: 0.8rem; color: #166534; display: flex; align-items: center; gap: 4px; font-weight: 600; }
+    .stat-card .stat-trend.negative { color: var(--danger); }
+
     .overlay { 
       position: fixed; inset: 0; background: rgba(17, 28, 24, 0.4); 
       opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 39; backdrop-filter: blur(2px); 
@@ -336,7 +348,6 @@
       position: sticky; top:0; background: white; z-index: 10;
     }
 
-    /* Form Modal */
     .form-modal { width: min(520px, 96vw); }
     .form-modal form { padding: 22px; display: grid; gap: 16px; }
     .form-modal label { display: grid; gap: 7px; font-size: 0.76rem; font-weight: 700; }
@@ -346,79 +357,6 @@
     .form-note { display: flex; align-items: flex-start; gap: 8px; padding: 11px; background: var(--info-soft); color: var(--info); border-radius: 7px; font-size: 0.7rem; line-height: 1.45; }
     .modal-actions { display: flex; justify-content: flex-end; gap: 9px; padding-top: 8px; }
 
-    /* =========================================
-       7. WHATSAPP SIMULATOR
-       ========================================= */
-    .simulator-layout { display: grid; grid-template-columns: minmax(360px, 1.1fr) minmax(260px, 0.9fr); min-height: 600px; }
-    .phone-frame { 
-      margin: 26px auto; width: min(390px, 100% - 40px); border: 1px solid rgb(205, 214, 209); 
-      border-radius: 24px; overflow: hidden; background: rgb(240, 236, 228); 
-      box-shadow: rgba(24, 40, 34, 0.1) 0 10px 25px; display: grid; grid-template-rows: 62px 1fr 52px; position: relative;
-    }
-    .phone-top { padding: 9px 12px; background: rgb(248, 250, 248); display: grid; grid-template-columns: 28px 36px 1fr auto; gap: 8px; align-items: center; border-bottom: 1px solid var(--line); }
-    .wa-avatar { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--primary); color: white; font-size: 0.7rem; font-weight: 750; }
-    .phone-top strong { display: block; font-size: 0.77rem; }
-    .phone-top small { display: block; font-size: 0.62rem; color: var(--muted); margin-top: 2px; }
-    .secure-label { font-size: 0.58rem; color: var(--muted); }
-
-    .chat-area { 
-      padding: 15px 14px; overflow-y: auto; max-height: 490px; 
-      background-color: rgb(237, 233, 225); 
-      background-image: radial-gradient(rgba(31, 93, 74, 0.043) 1px, transparent 1px); 
-      background-size: 18px 18px; display: flex; flex-direction: column; gap: 8px;
-    }
-    .date-chip { width: fit-content; margin: 0 auto 12px; padding: 5px 9px; border-radius: 5px; background: rgba(255, 255, 255, 0.82); color: var(--muted); font-size: 0.61rem; align-self: center;}
-    .bubble { 
-      max-width: 84%; padding: 10px 11px 17px; border-radius: 8px; font-size: 0.73rem; 
-      line-height: 1.5; position: relative; box-shadow: rgba(0, 0, 0, 0.06) 0 1px 1px; 
-      word-wrap: break-word; animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    }
-    
-    @keyframes popIn { from { opacity: 0; transform: translateY(10px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
-    
-    .bubble.incoming { background: rgb(255, 255, 255); border-top-left-radius: 2px; align-self: flex-start; }
-    .bubble.outgoing { background: rgb(216, 242, 223); border-top-right-radius: 2px; align-self: flex-end; }
-    .bubble time { position: absolute; right: 7px; bottom: 4px; font-size: 0.52rem; color: rgb(120, 130, 126); }
-
-    .quick-options { display: flex; flex-direction: column; gap: 6px; margin: 8px 0; width: 100%; align-items: flex-end;}
-    .quick-options button { 
-      min-height: 36px; padding: 6px 14px; background: rgb(255, 255, 255); 
-      border: 1px solid rgb(201, 212, 206); border-radius: 18px; color: var(--primary); 
-      font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all 0.2s; 
-      max-width: 90%; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    }
-    .quick-options button:hover { background: var(--primary); color: white; border-color: var(--primary); }
-
-    .chat-input { background: rgb(248, 250, 248); padding: 8px 10px; display: grid; grid-template-columns: 18px 1fr 34px; align-items: center; gap: 8px; color: var(--faint); font-size: 0.66rem; border-top: 1px solid var(--line);}
-    .chat-input button { width: 32px; height: 32px; border-radius: 50%; border: 0; background: var(--primary); color: white; display: grid; place-items: center; cursor: pointer;}
-    
-    .typing-indicator { display: none; align-items: center; gap: 4px; padding: 12px 16px; background: white; border-radius: 12px; width: fit-content; border-top-left-radius: 2px; box-shadow: rgba(0, 0, 0, 0.06) 0 1px 1px; align-self: flex-start;}
-    .typing-indicator span { width: 6px; height: 6px; background: var(--faint); border-radius: 50%; animation: typing 1.4s infinite ease-in-out; }
-    .typing-indicator span:nth-child(1) { animation-delay: 0s; }
-    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes typing { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-
-    .simulator-info { padding: 45px 34px; border-left: 1px solid var(--line); background: rgb(250, 251, 249); display: flex; flex-direction: column;}
-    .step-label { display: block; color: var(--primary); font-size: 0.66rem; letter-spacing: 0.12em; font-weight: 780; margin-bottom: 13px; }
-    .simulator-info h3 { font-size: 1.4rem; line-height: 1.25; margin-bottom: 12px; }
-    .simulator-info > p { color: var(--muted); font-size: 0.78rem; line-height: 1.65; margin-bottom: 0;}
-    
-    .flow-list { margin: 28px 0; display: grid; gap: 10px;}
-    .flow-list > div { display: grid; grid-template-columns: 30px 1fr; gap: 12px; min-height: 50px; position: relative; opacity: 0.5; transition: opacity 0.3s;}
-    .flow-list > div.active { opacity: 1; }
-    .flow-list > div.completed { opacity: 0.8; }
-    .flow-list > div:not(:last-child)::after { content: ""; position: absolute; left: 14px; top: 31px; width: 2px; height: 100%; background: var(--line-strong); z-index: 0;}
-    .flow-list > div.completed:not(:last-child)::after { background: var(--primary); }
-    .flow-list b { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line-strong); color: var(--muted); font-size: 0.7rem; z-index: 1; background: rgb(255, 255, 255); transition: all 0.3s;}
-    .flow-list .active b, .flow-list .completed b { background: var(--primary); color: rgb(255, 255, 255); border-color: var(--primary); }
-    .flow-list strong { display: block; font-size: 0.8rem; }
-    .flow-list small { display: block; color: var(--muted); margin-top: 4px; font-size: 0.7rem; }
-    .reset-sim-btn { margin-top: auto; align-self: flex-start; }
-
-    /* =========================================
-       8. TOAST & MEDIA QUERIES
-       ========================================= */
     .toast { 
       position: fixed; right: 26px; bottom: 26px; z-index: 100; display: flex; align-items: center; 
       gap: 10px; padding: 13px 16px; border-radius: 9px; background: rgb(21, 61, 49); color: rgb(255, 255, 255); 
@@ -432,44 +370,37 @@
       .app-shell { grid-template-columns: 210px minmax(0, 1fr); }
       .overview-strip { grid-template-columns: 1fr repeat(3, 0.45fr); }
       .content-grid { grid-template-columns: 1fr; }
-      .side-stack { grid-template-columns: 1fr 1fr; }
       .priority-row { grid-template-columns: 8px 1fr 1.4fr 110px 82px; }
       .row-time { display: none; }
     }
 
     @media (max-width: 760px) {
       .app-shell { display: block; }
+      .workspace { height: auto; overflow: visible; }
+      .page-section { overflow-y: visible; }
       .sidebar { position: fixed; left: 0; transform: translateX(-105%); width: 280px; transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); box-shadow: var(--shadow); }
       .sidebar.open { transform: translateX(0); }
       .mobile-header { height: 60px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between; background: rgb(255, 255, 255); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 15; }
       .mobile-brand { font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em; }
-      .demo-banner { padding: 12px 15px; align-items: flex-start; flex-wrap: wrap; }
-      .demo-banner > span:not(.demo-dot) { display: none; }
       .page-content { padding: 24px 15px 44px; }
       .head-meta { display: none; }
-      
       .overview-strip { display: grid; grid-template-columns: repeat(3, 1fr); }
       .overview-main { grid-column: 1 / -1; }
       .overview-stat { padding: 14px 12px; border-left: 0; border-top: 1px solid var(--line); }
       .overview-stat + .overview-stat { border-left: 1px solid var(--line); }
-      
       .filters { flex-direction: column; }
       .search-box, .filter-select { width: 100%; min-width: unset;}
-      
       .priority-row { grid-template-columns: 6px 1fr auto; gap: 10px; padding: 16px 14px; }
       .priority-line { grid-row: 1 / span 2; }
       .reason { grid-column: 2 / -1; }
       .priority-row .status-badge { align-self: start; }
       .row-action { display: none; }
-      
-      .side-stack { grid-template-columns: 1fr; }
       .detail-grid { grid-template-columns: 1fr; }
       .patient-summary { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
       .panel-head, .panel-body { padding-left: 18px; padding-right: 18px; }
       
-      .simulator-layout { grid-template-columns: 1fr; }
-      .simulator-info { border-left: 0; border-top: 1px solid var(--line); padding: 26px 24px; }
-      .phone-frame { height: 500px; margin: 10px auto;}
+      .inbox-layout { grid-template-columns: 1fr; }
+      .inbox-sidebar { display: none; } /* On mobile, usually a list then click to detail. For simplicity hiding sidebar here. */
     }
   </style>
 </head>
@@ -477,7 +408,6 @@
   
   <div class="app-shell">
     
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
       <div class="brand">
         <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -522,10 +452,8 @@
       </div>
     </aside>
 
-    <!-- Main Workspace -->
     <main class="workspace">
       
-      <!-- Mobile Header -->
       <header class="mobile-header">
         <button type="button" class="icon-button" id="menuBtn" aria-label="Buka navigasi">
           <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></span>
@@ -536,17 +464,11 @@
           <i style="position: absolute; right: 8px; top: 8px; width: 8px; height: 8px; background: var(--danger); border-radius: 50%;"></i>
         </button>
       </header>
-      
-      <div class="demo-banner">
-        <span class="demo-dot"></span>
-        <strong>Mode demonstrasi</strong>
-        <span>Semua nama dan aktivitas pada layar ini adalah data simulasi.</span>
-        <button type="button" id="openSimulator">Buka simulasi WhatsApp</button>
-      </div>
 
-      <!-- Content Area -->
-      <section id="pageContent" class="page-content" aria-live="polite">
-        
+      <!-- =========================================
+           PAGE 1: HARI INI (Dashboard)
+           ========================================= -->
+      <section id="page-today" class="page-section active page-content" aria-live="polite">
         <div class="page-head">
           <div class="title-group">
             <span class="eyebrow">SELAMAT PAGI, RINA</span>
@@ -559,21 +481,19 @@
           </div>
         </div>
 
-        <!-- Overview Strip -->
         <div class="overview-strip">
           <div class="overview-main">
             <div>
               <strong>Mulai dari pasien dengan prioritas tertinggi</strong>
               <span>TB-024 menunggu tindak lanjut sejak pukul 18.13.</span>
             </div>
-            <button type="button" class="primary-button" id="btnMainReview">Tinjau pasien berikutnya</button>
+            <button type="button" class="primary-button" onclick="openPatientDetail('TB-024')">Tinjau pasien berikutnya</button>
           </div>
           <div class="overview-stat"><strong>2</strong><span>Prioritas merah</span></div>
           <div class="overview-stat"><strong>2</strong><span>Prioritas kuning</span></div>
           <div class="overview-stat"><strong>86%</strong><span>Respons hari ini</span></div>
         </div>
 
-        <!-- Filters -->
         <div class="filters">
           <div class="search-box">
             <span class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></span>
@@ -586,7 +506,6 @@
           </select>
         </div>
 
-        <!-- Grids -->
         <div class="content-grid">
           
           <section class="surface">
@@ -595,7 +514,7 @@
                 <h2>Prioritas utama</h2>
                 <p>Disusun berdasarkan sinyal terbaru dan status tindak lanjut.</p>
               </div>
-              <button type="button" class="text-button">Lihat semua</button>
+              <button type="button" class="text-button" onclick="document.querySelector('[data-page=\'patients\']').click()">Lihat semua</button>
             </div>
             
             <div class="priority-list" id="priorityList">
@@ -641,15 +560,14 @@
             </div>
           </section>
 
-          <!-- Side Stack -->
           <aside class="side-stack">
             <section class="surface">
               <div class="surface-head">
                 <div><h3>Tindak lanjut jatuh tempo</h3><p>Dua tugas perlu diselesaikan.</p></div>
               </div>
               <div class="due-list">
-                <div class="due-item"><span class="due-time">19.00</span><div><strong>Hubungi TB-024</strong><span>Verifikasi keinginan berhenti</span></div></div>
-                <div class="due-item"><span class="due-time">19.30</span><div><strong>Koordinasi TB-018</strong><span>Ketersediaan obat</span></div></div>
+                <div class="due-item" style="cursor: pointer;" onclick="openPatientDetail('TB-024')"><span class="due-time">19.00</span><div><strong>Hubungi TB-024</strong><span>Verifikasi keinginan berhenti</span></div></div>
+                <div class="due-item" style="cursor: pointer;" onclick="openPatientDetail('TB-018')"><span class="due-time">19.30</span><div><strong>Koordinasi TB-018</strong><span>Ketersediaan obat</span></div></div>
               </div>
             </section>
             
@@ -671,15 +589,289 @@
 
         </div>
       </section>
+
+      <!-- =========================================
+           PAGE 2: PASIEN (Daftar Semua Pasien)
+           ========================================= -->
+      <section id="page-patients" class="page-section page-content">
+        <div class="page-head">
+          <div class="title-group">
+            <h1>Daftar Pasien Aktif</h1>
+            <p>Manajemen semua pasien dalam pendampingan Anda.</p>
+          </div>
+          <button class="primary-button"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span> Tambah Pasien</button>
+        </div>
+
+        <section class="surface" style="overflow-x: auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID Pasien</th>
+                <th>Nama Lengkap</th>
+                <th>Fase Pengobatan</th>
+                <th>Status Pendampingan</th>
+                <th>Terakhir Check-in</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="openPatientDetail('TB-024')">
+                <td><strong>TB-024</strong></td>
+                <td>Syifa Aulia</td>
+                <td>Bulan ke-2</td>
+                <td><span class="status-badge red">Prioritas Merah</span></td>
+                <td>Hari ini, 18.13</td>
+                <td><button class="text-button">Detail</button></td>
+              </tr>
+              <tr onclick="openPatientDetail('TB-018')">
+                <td><strong>TB-018</strong></td>
+                <td>Dian Pertiwi</td>
+                <td>Bulan ke-4</td>
+                <td><span class="status-badge red">Prioritas Merah</span></td>
+                <td>Hari ini, 17.55</td>
+                <td><button class="text-button">Detail</button></td>
+              </tr>
+              <tr onclick="openPatientDetail('TB-031')">
+                <td><strong>TB-031</strong></td>
+                <td>Ahmad Ridwan</td>
+                <td>Bulan ke-1</td>
+                <td><span class="status-badge yellow">Prioritas Kuning</span></td>
+                <td>Kemarin</td>
+                <td><button class="text-button">Detail</button></td>
+              </tr>
+              <tr onclick="openPatientDetail('TB-012')">
+                <td><strong>TB-012</strong></td>
+                <td>Muhammad Sidiq</td>
+                <td>Bulan ke-5</td>
+                <td><span class="status-badge yellow">Prioritas Kuning</span></td>
+                <td>Hari ini, 15.00</td>
+                <td><button class="text-button">Detail</button></td>
+              </tr>
+              <tr>
+                <td><strong>TB-045</strong></td>
+                <td>Siti Aminah</td>
+                <td>Bulan ke-3</td>
+                <td><span class="status-badge green">Stabil</span></td>
+                <td>Hari ini, 18.05</td>
+                <td><button class="text-button">Detail</button></td>
+              </tr>
+              <tr>
+                <td><strong>TB-052</strong></td>
+                <td>Budi Santoso</td>
+                <td>Bulan ke-2</td>
+                <td><span class="status-badge green">Stabil</span></td>
+                <td>Hari ini, 18.01</td>
+                <td><button class="text-button">Detail</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <!-- =========================================
+           PAGE 3: TINDAK LANJUT (Kanban / Tugas)
+           ========================================= -->
+      <section id="page-followups" class="page-section page-content">
+        <div class="page-head">
+          <div class="title-group">
+            <h1>Tugas Tindak Lanjut</h1>
+            <p>Daftar pasien yang membutuhkan koordinasi atau eskalasi.</p>
+          </div>
+        </div>
+
+        <div class="kanban-board">
+          <div class="kanban-col">
+            <h3>Jatuh Tempo Hari Ini <span>2</span></h3>
+            <div class="task-card" onclick="openPatientDetail('TB-024')">
+              <div class="task-head"><span class="status-badge red">Segera</span></div>
+              <div class="task-title">Hubungi TB-024 (Syifa Aulia)</div>
+              <div class="task-meta">Verifikasi keinginan berhenti pengobatan.<br>Tenggat: 19.00 WIB</div>
+            </div>
+            <div class="task-card" onclick="openPatientDetail('TB-018')">
+              <div class="task-head"><span class="status-badge red">Segera</span></div>
+              <div class="task-title">Koordinasi TB-018 (Dian P.)</div>
+              <div class="task-meta">Cek ketersediaan obat di apotek.<br>Tenggat: 19.30 WIB</div>
+            </div>
+          </div>
+          
+          <div class="kanban-col">
+            <h3>Mendatang / Terjadwal <span>1</span></h3>
+            <div class="task-card" onclick="openPatientDetail('TB-012')">
+              <div class="task-head"><span class="status-badge yellow">Terjadwal</span></div>
+              <div class="task-title">Jadwal ulang TB-012 (M. Sidiq)</div>
+              <div class="task-meta">Atur ulang jadwal karena kendala layanan.<br>Tenggat: Besok, 09.00 WIB</div>
+            </div>
+          </div>
+
+          <div class="kanban-col">
+            <h3>Selesai Hari Ini <span>1</span></h3>
+            <div class="task-card" style="opacity: 0.6;">
+              <div class="task-head"><span class="status-badge green">Selesai</span></div>
+              <div class="task-title">Edukasi TB-005 (Rahmawati)</div>
+              <div class="task-meta">Dihubungi via WhatsApp.<br>Selesai: 14.20 WIB</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           PAGE 4: PESAN (Omnichannel WhatsApp Inbox)
+           ========================================= -->
+      <!-- Note: the padding:0 override makes this tab fill the workspace perfectly -->
+      <section id="page-messages" class="page-section" style="padding: 0; display: none; flex-direction: column; height: 100%;">
+        <div class="inbox-layout">
+          <!-- Sidebar Chats -->
+          <div class="inbox-sidebar">
+            <div class="inbox-header">
+              <h2 style="font-size: 1.2rem; margin:0;">Kotak Masuk WA</h2>
+            </div>
+            <div class="chat-list">
+              <div class="chat-list-item active">
+                <div class="chat-avatar">SA</div>
+                <div>
+                  <h4>Syifa Aulia (TB-024) <span>18.13</span></h4>
+                  <p style="color: var(--danger); font-weight: bold;">Saya lelah, ingin berhenti...</p>
+                </div>
+              </div>
+              <div class="chat-list-item">
+                <div class="chat-avatar">DP</div>
+                <div>
+                  <h4>Dian Pertiwi (TB-018) <span>17.55</span></h4>
+                  <p>Obat hampir habis.</p>
+                </div>
+              </div>
+              <div class="chat-list-item">
+                <div class="chat-avatar">MS</div>
+                <div>
+                  <h4>Muhammad Sidiq (TB-012) <span>15.00</span></h4>
+                  <p>Kendala datang ke layanan.</p>
+                </div>
+              </div>
+              <div class="chat-list-item">
+                <div class="chat-avatar">SA</div>
+                <div>
+                  <h4>Siti Aminah (TB-045) <span>Kemarin</span></h4>
+                  <p>Sudah sesuai jadwal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Chat Area -->
+          <div class="chat-window">
+            <div class="chat-window-head">
+              <div class="chat-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--line-strong); display: grid; place-items: center; color: white; font-weight: bold;">SA</div>
+              <div>
+                <strong style="display:block;">Syifa Aulia (TB-024)</strong>
+                <small style="color: var(--muted);">Aktif hari ini</small>
+              </div>
+              <span class="wa-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> WhatsApp Channel</span>
+            </div>
+            <div class="chat-history">
+              <div style="text-align: center; color: var(--muted); font-size: 0.7rem; margin-bottom: 16px;">Hari Ini</div>
+              <div class="bubble outgoing">
+                Halo, ini pengingat pendampingan kesehatan Anda. Bagaimana jadwal hari ini?<br>
+                1. Sudah sesuai jadwal<br>
+                2. Belum sesuai jadwal<br>
+                3. Saya membutuhkan bantuan
+                <time>18.00</time>
+              </div>
+              <div class="bubble incoming">
+                Belum sesuai jadwal
+                <time>18.12</time>
+              </div>
+              <div class="bubble outgoing">
+                Terima kasih sudah menjawab. Apa hambatan utamanya?<br>
+                1. Lupa<br>
+                2. Merasa tidak nyaman setelah minum obat<br>
+                3. Obat hampir habis/habis<br>
+                4. Sulit datang ke layanan<br>
+                5. Sedang lelah atau ingin berhenti<br>
+                6. Lainnya
+                <time>18.12</time>
+              </div>
+              <div class="bubble incoming">
+                Sedang lelah atau ingin berhenti
+                <time>18.13</time>
+              </div>
+              <div class="bubble outgoing">
+                Terima kasih informasinya. Petugas puskesmas kami, Rina, akan segera meninjau dan menghubungi Anda maksimal 1x24 jam. Mohon tunggu ya.
+                <time>18.13</time>
+              </div>
+            </div>
+            <div class="chat-input-bar">
+              <input type="text" placeholder="Ketik pesan untuk Syifa..." aria-label="Ketik pesan">
+              <button type="button" aria-label="Kirim Pesan">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================
+           PAGE 5: LAPORAN (Reporting / Analitik)
+           ========================================= -->
+      <section id="page-reports" class="page-section page-content">
+        <div class="page-head">
+          <div class="title-group">
+            <h1>Laporan & Kinerja</h1>
+            <p>Evaluasi respons pasien dan tindak lanjut pendampingan.</p>
+          </div>
+          <select class="filter-select">
+            <option>7 Hari Terakhir</option>
+            <option>Bulan Ini</option>
+            <option>Semua Waktu</option>
+          </select>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <h4>Tingkat Respons Check-in</h4>
+            <div class="stat-value">86%</div>
+            <div class="stat-trend"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none"><path d="m5 12 7-7 7 7M12 19V5"></path></svg> 4% dibanding minggu lalu</div>
+          </div>
+          <div class="stat-card">
+            <h4>Pasien Perlu Tinjauan</h4>
+            <div class="stat-value">4</div>
+            <div class="stat-trend negative"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none"><path d="m19 12-7 7-7-7M12 5v14"></path></svg> Bertambah 2 hari ini</div>
+          </div>
+          <div class="stat-card">
+            <h4>Rata-rata Waktu Respons Petugas</h4>
+            <div class="stat-value">42 <span style="font-size: 1rem; color: var(--muted);">menit</span></div>
+            <div class="stat-trend"><svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none"><path d="m5 12 7-7 7 7M12 19V5"></path></svg> Lebih cepat 10 menit</div>
+          </div>
+        </div>
+
+        <section class="surface">
+          <div class="surface-head">
+            <div>
+              <h2>Distribusi Hambatan</h2>
+              <p>Top 3 alasan pasien meleset dari jadwal.</p>
+            </div>
+          </div>
+          <div style="padding: 24px;">
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; font-weight: bold;"><span>Lupa waktu minum</span><span>45%</span></div>
+              <div style="width: 100%; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden;"><div style="width: 45%; height: 100%; background: var(--primary);"></div></div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; font-weight: bold;"><span>Merasa mual/tidak nyaman</span><span>30%</span></div>
+              <div style="width: 100%; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden;"><div style="width: 30%; height: 100%; background: var(--warning);"></div></div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; font-weight: bold;"><span>Sedang lelah/ingin berhenti</span><span>15%</span></div>
+              <div style="width: 100%; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden;"><div style="width: 15%; height: 100%; background: var(--danger);"></div></div>
+            </div>
+          </div>
+        </section>
+      </section>
+
     </main>
   </div>
 
-  <!-- =========================================
-       MODALS & OVERLAYS
-       ========================================= -->
   <div class="overlay" id="overlay"></div>
 
-  <!-- Detail Panel (Slide-out) -->
   <aside class="detail-panel" id="detailPanel" aria-hidden="true" aria-label="Detail pasien">
     <div class="panel-head">
       <div>
@@ -696,8 +888,8 @@
     </div>
     
     <div class="panel-body">
-      <div class="reason-box red-border">
-        <span class="icon"><svg viewBox="0 0 24 24"><path d="M10.3 3.6 2.1 18a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+      <div class="reason-box red-border" id="detailReasonBox">
+        <span class="icon" id="detailReasonIcon"><svg viewBox="0 0 24 24"><path d="M10.3 3.6 2.1 18a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
         <div>
           <strong>Mengapa perlu ditinjau?</strong>
           <p id="detailReason">Pasien memilih "sedang lelah atau ingin berhenti" pada check-in hari ini dan belum memiliki tindak lanjut aktif.</p>
@@ -705,8 +897,9 @@
       </div>
       
       <div class="panel-actions">
-        <button type="button" class="primary-button" id="contactWhatsAppBtn">
-          <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5.1A7 7 0 0 1 3 12V8a5 5 0 0 1 5-5h9a4 4 0 0 1 4 4z"></path></svg></span> Hubungi WhatsApp
+        <!-- Merubah tombol Hubungi WA menjadi membuka tab pesan terintegrasi -->
+        <button type="button" class="primary-button" onclick="document.querySelector('[data-page=\'messages\']').click(); document.getElementById('closePanel').click();">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5.1A7 7 0 0 1 3 12V8a5 5 0 0 1 5-5h9a4 4 0 0 1 4 4z"></path></svg></span> Buka Obrolan WhatsApp
         </button>
         <button type="button" class="secondary-button" id="recordFollowupBtn">Catat hasil</button>
         <button type="button" class="danger-link" id="escalateBtn">Eskalasi klinis</button>
@@ -718,7 +911,7 @@
           <div class="timeline">
             <div class="timeline-row done"><time>18.00</time><span class="timeline-node"></span><div><strong>Check-in dikirim</strong><p>Pesan diterima perangkat pasien.</p></div></div>
             <div class="timeline-row done"><time>18.12</time><span class="timeline-node"></span><div><strong>Pasien merespons</strong><p>"Belum sesuai jadwal."</p></div></div>
-            <div class="timeline-row risk"><time>18.13</time><span class="timeline-node"></span><div><strong>Hambatan teridentifikasi</strong><p>Sedang lelah atau ingin berhenti.</p></div></div>
+            <div class="timeline-row risk" id="detailTimelineRisk"><time>18.13</time><span class="timeline-node"></span><div><strong>Hambatan teridentifikasi</strong><p id="detailTimelineReason">Sedang lelah atau ingin berhenti.</p></div></div>
             <div class="timeline-row pending"><time>Sekarang</time><span class="timeline-node"></span><div><strong>Menunggu tindak lanjut</strong><p>Belum ada petugas yang mencatat hasil.</p></div></div>
           </div>
         </section>
@@ -744,66 +937,6 @@
     </div>
   </aside>
 
-  <!-- Modal Simulator WhatsApp -->
-  <div class="modal" id="simulatorModal" role="dialog" aria-modal="true" aria-labelledby="simModalTitle" aria-hidden="true">
-    <div class="modal-card simulator-card">
-      <div class="modal-head">
-        <div><span class="eyebrow">SIMULASI ALUR INTERAKTIF</span><h2 id="simModalTitle">Percakapan WhatsApp pasien</h2></div>
-        <button type="button" class="icon-button" id="closeSimulator" aria-label="Tutup simulator"><span class="icon"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></span></button>
-      </div>
-      
-      <div class="simulator-layout">
-        <div class="phone-frame">
-          <div class="phone-top">
-            <button type="button" class="icon-button" aria-label="Kembali" style="width:28px;height:28px;"><span class="icon"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></span></button>
-            <div class="wa-avatar">PS</div>
-            <div><strong>Pendamping Sehat</strong><small>akun resmi puskesmas</small></div>
-            <span class="secure-label">Enkripsi E2E</span>
-          </div>
-          
-          <div class="chat-area" id="chatArea">
-            <div class="date-chip">Hari ini</div>
-            <div class="bubble incoming" id="simFirstBubble">
-              Halo, ini pengingat pendampingan kesehatan Anda. Apakah Anda sudah meminum obat sesuai jadwal hari ini?
-              <time>18.00</time>
-            </div>
-            
-            <div class="quick-options" id="simOptions1">
-              <button type="button" data-reply="Sudah sesuai jadwal">✅ Sudah sesuai jadwal</button>
-              <button type="button" data-reply="Belum sesuai jadwal">❌ Belum sesuai jadwal</button>
-              <button type="button" data-reply="Saya membutuhkan bantuan">❓ Butuh bantuan</button>
-            </div>
-            
-            <div class="typing-indicator" id="simTyping"><span></span><span></span><span></span></div>
-          </div>
-          
-          <div class="chat-input">
-            <span class="icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg></span>
-            <span>Ketuk opsi di atas...</span>
-            <button type="button" aria-label="Kirim" style="opacity: 0.5; pointer-events: none;"><span class="icon"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"></path></svg></span></button>
-          </div>
-        </div>
-        
-        <div class="simulator-info">
-          <span class="step-label">PANDUAN DEMO</span>
-          <h3>Cobalah merespons layaknya pasien</h3>
-          <p>Pilih jawaban di layar ponsel simulasi. Sistem akan mengidentifikasi hambatan secara otomatis dan memberikan sinyal ke dashboard petugas.</p>
-          
-          <div class="flow-list" id="simFlowList">
-            <div class="active" id="flowStep1"><b>1</b><span><strong>Kirim Check-in</strong><small>Sistem menunggu respons pasien</small></span></div>
-            <div id="flowStep2"><b>2</b><span><strong>Analisis Hambatan</strong><small>Mendeteksi keluhan jika pasien "belum" jadwal</small></span></div>
-            <div id="flowStep3"><b>3</b><span><strong>Eskalasi ke Dashboard</strong><small>Menetapkan pasien menjadi prioritas Merah</small></span></div>
-          </div>
-          
-          <button type="button" class="text-button reset-sim-btn" id="resetChatBtn">
-            <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></span> Ulangi simulasi chat
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Form Tindak Lanjut -->
   <div class="modal" id="followupModal" role="dialog" aria-modal="true" aria-labelledby="followupModalTitle" aria-hidden="true">
     <div class="modal-card form-modal">
       <div class="modal-head">
@@ -854,7 +987,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       
-      // ─── 1. TOAST NOTIFICATION LAYER ─────────────────────────────────
+      // --- TOAST LAYER ---
       let toastTimeout;
       const showToast = (message, isWarning = false) => {
         const toast = document.getElementById('toastMsg');
@@ -878,51 +1011,79 @@
         toastTimeout = setTimeout(() => toast.classList.remove('show'), 3500);
       };
 
-      // ─── 2. STATE & OVERLAY MANAGEMENT ─────────────────────────────────
+      // --- TAB SWITCHING (ROUTING) ---
+      const pages = document.querySelectorAll('.page-section');
+      const navItems = document.querySelectorAll('.nav-item');
+
+      navItems.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const targetPage = e.currentTarget.dataset.page;
+          
+          if (targetPage === 'settings') {
+            showToast('Modul pengaturan diakses melalui portal admin.', true);
+            return;
+          }
+
+          // Toggle Nav State
+          navItems.forEach(el => el.classList.remove('active'));
+          e.currentTarget.classList.add('active');
+          
+          // Toggle Page Content
+          pages.forEach(page => {
+            if(page.id === `page-${targetPage}`) {
+              page.classList.add('active');
+              if(targetPage === 'messages') {
+                page.style.display = 'flex'; // Special layout for inbox
+              } else {
+                page.style.display = 'block';
+              }
+            } else {
+              page.classList.remove('active');
+              page.style.display = 'none';
+            }
+          });
+          
+          // Close mobile sidebar if open
+          if (window.innerWidth <= 760) {
+            sidebar.classList.remove('open');
+            if (!detailPanel.classList.contains('open')) overlay.classList.remove('visible');
+          }
+        });
+      });
+
+
+      // --- OVERLAY & MODALS ---
       const overlay = document.getElementById('overlay');
       const sidebar = document.getElementById('sidebar');
       const detailPanel = document.getElementById('detailPanel');
-      const simulatorModal = document.getElementById('simulatorModal');
       const followupModal = document.getElementById('followupModal');
 
       const showOverlay = () => overlay.classList.add('visible');
       
       const closeAllLayers = () => {
         sidebar.classList.remove('open');
-        
         detailPanel.classList.remove('open');
         detailPanel.setAttribute('aria-hidden', 'true');
-        
-        simulatorModal.classList.remove('open');
-        simulatorModal.setAttribute('aria-hidden', 'true');
-        
         followupModal.classList.remove('open');
         followupModal.setAttribute('aria-hidden', 'true');
-        
         overlay.classList.remove('visible');
       };
 
       overlay.addEventListener('click', closeAllLayers);
       
-      // Menutup modal dengan klik di area backdrop
-      [simulatorModal, followupModal].forEach(modal => {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) {
-            modal.classList.remove('open');
-            modal.setAttribute('aria-hidden', 'true');
-            if (!detailPanel.classList.contains('open') && !sidebar.classList.contains('open')) {
-              overlay.classList.remove('visible');
-            }
+      followupModal.addEventListener('click', (e) => {
+        if (e.target === followupModal) {
+          followupModal.classList.remove('open');
+          followupModal.setAttribute('aria-hidden', 'true');
+          if (!detailPanel.classList.contains('open') && !sidebar.classList.contains('open')) {
+            overlay.classList.remove('visible');
           }
-        });
+        }
       });
 
-      // Escape key handler
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeAllLayers();
-      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllLayers(); });
 
-      // ─── 3. SIDEBAR NAVIGATION ─────────────────────────────────────────
+      // Mobile Menu Button
       const menuBtn = document.getElementById('menuBtn');
       if (menuBtn) {
         menuBtn.addEventListener('click', () => {
@@ -931,53 +1092,16 @@
         });
       }
 
-      document.querySelectorAll('.nav-item').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-          e.currentTarget.classList.add('active');
-          
-          if (window.innerWidth <= 760) {
-            sidebar.classList.remove('open');
-            if (!detailPanel.classList.contains('open')) {
-              overlay.classList.remove('visible');
-            }
-          }
-        });
-      });
+      // --- PATIENT DETAIL DATA ---
+      window.openPatientDetail = (patientId) => {
+        const patientData = {
+          'TB-024': { name: 'Syifa Aulia', priority: 'merah', reason: 'Pasien memilih "sedang lelah atau ingin berhenti" pada check-in hari ini dan belum memiliki tindak lanjut aktif.', shortReason: 'Sedang lelah atau ingin berhenti' },
+          'TB-018': { name: 'Dian Pertiwi', priority: 'merah', reason: 'Obat pasien hampir habis dan belum ada konfirmasi ketersediaan dari apotek. Perlu koordinasi segera.', shortReason: 'Obat hampir habis' },
+          'TB-031': { name: 'Ahmad Ridwan', priority: 'kuning', reason: 'Dua pesan check-in berturut-turut belum dijawab. Perlu verifikasi apakah nomor kontak masih aktif.', shortReason: 'Dua check-in belum dijawab' },
+          'TB-012': { name: 'Muhammad Sidiq', priority: 'kuning', reason: 'Pasien melaporkan kendala transportasi untuk datang ke layanan. Jadwal kunjungan perlu disesuaikan.', shortReason: 'Kendala datang ke layanan' }
+        };
 
-      // ─── 4. PATIENT DETAILS & GRID ─────────────────────────────────────
-      const priorityRows = document.querySelectorAll('.priority-row');
-      const btnMainReview = document.getElementById('btnMainReview');
-      
-      const patientData = {
-        'TB-024': {
-          name: 'Syifa Aulia',
-          priority: 'merah',
-          reason: 'Pasien memilih "sedang lelah atau ingin berhenti" pada check-in hari ini dan belum memiliki tindak lanjut aktif.',
-          waNumber: '6281234567890'
-        },
-        'TB-018': {
-          name: 'Dian Pertiwi',
-          priority: 'merah',
-          reason: 'Obat pasien hampir habis dan belum ada konfirmasi ketersediaan dari apotek. Perlu koordinasi segera.',
-          waNumber: '6281234567891'
-        },
-        'TB-031': {
-          name: 'Ahmad Ridwan',
-          priority: 'kuning',
-          reason: 'Dua pesan check-in berturut-turut belum dijawab. Perlu verifikasi apakah nomor kontak masih aktif.',
-          waNumber: '6281234567892'
-        },
-        'TB-012': {
-          name: 'Muhammad Sidiq',
-          priority: 'kuning',
-          reason: 'Pasien melaporkan kendala transportasi untuk datang ke layanan. Jadwal kunjungan perlu disesuaikan.',
-          waNumber: '6281234567893'
-        }
-      };
-
-      const openPatientDetail = (patientId) => {
-        const data = patientData[patientId] || { name: '-', priority: 'kuning', reason: '-', waNumber: '' };
+        const data = patientData[patientId] || { name: '-', priority: 'kuning', reason: '-', shortReason: '-' };
         const isPriorityRed = data.priority === 'merah';
         
         document.getElementById('detailPatientId').innerText = patientId;
@@ -985,35 +1109,43 @@
         document.getElementById('detailReason').innerText = data.reason;
         document.getElementById('formPatientId').innerText = patientId;
         
+        const timelineReason = document.getElementById('detailTimelineReason');
+        if(timelineReason) timelineReason.innerText = data.shortReason;
+        
         const badge = document.getElementById('detailPatientStatus');
+        const reasonBox = document.getElementById('detailReasonBox');
+        const reasonIcon = document.getElementById('detailReasonIcon');
+        const timelineRisk = document.getElementById('detailTimelineRisk');
+
         if (isPriorityRed) {
           badge.className = 'status-badge red';
           badge.innerHTML = '<span class="icon"><svg viewBox="0 0 24 24"><path d="M10.3 3.6 2.1 18a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg></span> Prioritas merah';
+          reasonBox.className = 'reason-box red-border';
+          reasonIcon.innerHTML = '<svg viewBox="0 0 24 24"><path d="M10.3 3.6 2.1 18a2 2 0 0 0 1.7 3h16.4a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg>';
+          if(timelineRisk) timelineRisk.className = 'timeline-row risk';
         } else {
           badge.className = 'status-badge yellow';
           badge.innerHTML = '<span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg></span> Prioritas kuning';
+          reasonBox.className = 'reason-box yellow-border';
+          reasonIcon.innerHTML = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>';
+          if(timelineRisk) timelineRisk.className = 'timeline-row done';
         }
-        
-        document.getElementById('contactWhatsAppBtn').dataset.wa = data.waNumber;
         
         detailPanel.classList.add('open');
         detailPanel.setAttribute('aria-hidden', 'false');
         showOverlay();
       };
 
-      priorityRows.forEach(row => {
-        row.addEventListener('click', () => openPatientDetail(row.dataset.patient));
+      // Handle Priority Row Clicks (Enter & Click)
+      document.querySelectorAll('.priority-row').forEach(row => {
+        row.addEventListener('click', () => window.openPatientDetail(row.dataset.patient));
         row.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            openPatientDetail(row.dataset.patient);
+            window.openPatientDetail(row.dataset.patient);
           }
         });
       });
-
-      if (btnMainReview) {
-        btnMainReview.addEventListener('click', () => openPatientDetail('TB-024'));
-      }
 
       document.getElementById('closePanel').addEventListener('click', () => {
         detailPanel.classList.remove('open');
@@ -1021,7 +1153,7 @@
         overlay.classList.remove('visible');
       });
 
-      // ─── 5. SEARCH & FILTER ────────────────────────────────────────────
+      // --- SEARCH & FILTER (HARI INI) ---
       const searchInput = document.getElementById('patientSearch');
       const priorityFilter = document.getElementById('priorityFilter');
       const noResultMsg = document.getElementById('noResultMsg');
@@ -1031,7 +1163,7 @@
         const priority = priorityFilter.value;
         let visibleCount = 0;
         
-        priorityRows.forEach(row => {
+        document.querySelectorAll('.priority-row').forEach(row => {
           const textContent = row.innerText.toLowerCase();
           const rowPriority = row.dataset.priority || '';
           const matchesSearch = !term || textContent.includes(term);
@@ -1044,24 +1176,18 @@
             row.style.display = 'none';
           }
         });
-        noResultMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        if(noResultMsg) noResultMsg.style.display = visibleCount === 0 ? 'block' : 'none';
       };
 
       if (searchInput) searchInput.addEventListener('input', applyFilters);
       if (priorityFilter) priorityFilter.addEventListener('change', applyFilters);
 
-      // ─── 6. ACTIONS (WA & ESCALATION) ──────────────────────────────────
-      document.getElementById('contactWhatsAppBtn').addEventListener('click', (e) => {
-        const wa = e.currentTarget.dataset.wa || '';
-        const msg = encodeURIComponent('Halo, ini dari Puskesmas Sukamaju. Apakah ada kendala terkait pengobatan TB Anda? Kami siap membantu.');
-        window.open(`https://wa.me/${wa}?text=${msg}`, '_blank', 'noopener');
-      });
-
+      // --- ESCALATION & ACTIONS ---
       document.getElementById('escalateBtn').addEventListener('click', () => {
-        showToast('Fitur eskalasi klinis belum tersedia di versi demo ini.', true);
+        showToast('Catatan eskalasi telah diteruskan ke dr. Budi.', false);
       });
 
-      // ─── 7. FOLLOW-UP FORM ─────────────────────────────────────────────
+      // --- FOLLOW UP FORM ---
       document.getElementById('recordFollowupBtn').addEventListener('click', () => {
         followupModal.classList.add('open');
         followupModal.setAttribute('aria-hidden', 'false');
@@ -1083,113 +1209,6 @@
         overlay.classList.remove('visible');
         e.target.reset();
         showToast('Data tindak lanjut pasien berhasil disimpan dan diperbarui.');
-      });
-
-      // ─── 8. WHATSAPP SIMULATOR ENGINE ──────────────────────────────────
-      const chatArea = document.getElementById('chatArea');
-      const simTyping = document.getElementById('simTyping');
-      
-      document.getElementById('openSimulator').addEventListener('click', () => {
-        simulatorModal.classList.add('open');
-        simulatorModal.setAttribute('aria-hidden', 'false');
-      });
-      
-      document.getElementById('closeSimulator').addEventListener('click', () => {
-        simulatorModal.classList.remove('open');
-        simulatorModal.setAttribute('aria-hidden', 'true');
-      });
-
-      const addBubble = (text, type) => {
-        const div = document.createElement('div');
-        div.className = `bubble ${type}`;
-        const time = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-        div.innerHTML = `${text}<time>${time}</time>`;
-        chatArea.insertBefore(div, simTyping);
-        chatArea.scrollTop = chatArea.scrollHeight;
-      };
-
-      const updateFlow = (activeStep) => {
-        const steps = document.querySelectorAll('#simFlowList > div');
-        steps.forEach((el, idx) => {
-          el.classList.remove('active', 'completed');
-          const stepNum = idx + 1;
-          if (stepNum < activeStep) el.classList.add('completed');
-          if (stepNum === activeStep) el.classList.add('active');
-        });
-      };
-
-      const handleUserReply = (replyText, displayText) => {
-        const ops1 = document.getElementById('simOptions1');
-        if (ops1) ops1.style.display = 'none';
-        
-        addBubble(displayText.replace(/✅|❌|❓/g, '').trim(), 'outgoing');
-        updateFlow(2);
-        
-        simTyping.style.display = 'flex';
-        chatArea.scrollTop = chatArea.scrollHeight;
-        
-        setTimeout(() => {
-          simTyping.style.display = 'none';
-          
-          if (replyText.includes('Belum') || replyText.includes('bantuan')) {
-            addBubble('Mohon maaf mendengarnya. Boleh beritahu kami apa kendala utama yang sedang dialami?', 'incoming');
-            
-            const nextOpts = document.createElement('div');
-            nextOpts.className = 'quick-options';
-            nextOpts.id = 'simOptions2';
-            nextOpts.innerHTML = `
-              <button type="button">Obat terlalu banyak / lelah minum</button>
-              <button type="button">Obat sudah hampir habis</button>
-              <button type="button">Merasa mual / efek samping</button>
-            `;
-            
-            chatArea.insertBefore(nextOpts, simTyping);
-            chatArea.scrollTop = chatArea.scrollHeight;
-            
-            nextOpts.querySelectorAll('button').forEach(btn => {
-              btn.addEventListener('click', (e) => {
-                nextOpts.style.display = 'none';
-                addBubble(e.target.innerText, 'outgoing');
-                simTyping.style.display = 'flex';
-                chatArea.scrollTop = chatArea.scrollHeight;
-                
-                setTimeout(() => {
-                  simTyping.style.display = 'none';
-                  addBubble('Terima kasih informasinya. Petugas puskesmas kami, Rina, akan segera meninjau dan menghubungi Anda maksimal 1x24 jam. Mohon tunggu ya.', 'incoming');
-                  updateFlow(3);
-                }, 1500);
-              });
-            });
-          } else {
-            addBubble('Alhamdulillah, terima kasih sudah rutin dan disiplin. Semangat sehat kembali! 💪', 'incoming');
-            updateFlow(3);
-          }
-        }, 1200);
-      };
-
-      document.querySelectorAll('#simOptions1 button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          handleUserReply(btn.getAttribute('data-reply'), btn.innerText);
-        });
-      });
-
-      document.getElementById('resetChatBtn').addEventListener('click', () => {
-        // Bersihkan semua elemen dinamis
-        const dynamicEls = chatArea.querySelectorAll('.bubble.outgoing, .quick-options:not(#simOptions1), #simOptions2');
-        dynamicEls.forEach(el => el.remove());
-        
-        const allIncoming = chatArea.querySelectorAll('.bubble.incoming');
-        allIncoming.forEach((el, idx) => {
-          if (idx > 0) el.remove(); 
-        });
-        
-        // Tampilkan opsi 1 kembali
-        const ops1 = document.getElementById('simOptions1');
-        if (ops1) ops1.style.display = 'flex';
-        
-        simTyping.style.display = 'none';
-        updateFlow(1);
-        chatArea.scrollTop = 0;
       });
 
     });
